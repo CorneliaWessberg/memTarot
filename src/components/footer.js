@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Modal from "react-modal"; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Footer() {
   return (
@@ -12,16 +14,16 @@ function Footer() {
                 <div class="flex flex-col">
                     <span class="font-bold text-midnight uppercase mb-2">Contact</span>
                     <span class="my-2"><Link to="./aboutMe" class="text-midnight  text-md hover:text-blue-500">About Mem tarot</Link></span>
-                    <span class="my-2"><a href="#" class="text-midnight  text-md hover:text-blue-500">Contact me</a></span>
+                    <span class="my-2"><Link to="./contact" class="text-midnight  text-md hover:text-blue-500">Contact me</Link></span>
                 </div>
                 <div class="flex flex-col">
                     <span class="font-bold text-midnight uppercase mt-4 md:mt-0 mb-2">Social media</span>
-                    <span class="my-2"><a href="#" class="text-midnight text-md hover:text-blue-500">Instagram</a></span>
-                    <span class="my-2"><a href="#" class="text-midnight  text-md hover:text-blue-500">Youtube</a></span>
+                    <span class="my-2"><a href="#" class="text-midnight text-md hover:text-blue-500"><FontAwesomeIcon icon={['fab', 'instagram']} /> Instagram</a></span>
+                    <span class="my-2"><a href="#" class="text-midnight  text-md hover:text-blue-500"><FontAwesomeIcon icon={['fab', 'youtube']} />Youtube</a></span>
                 </div>
                 <div class="flex flex-col">
                     <span class="font-bold text-midnight uppercase mt-4 md:mt-0 mb-2">Payments</span>
-                    <span class="my-2"><a href="#" class="text-midnight  text-md hover:text-blue-500">Paypal</a></span>
+                    <span class="my-2"><a href="#" class="text-midnight  text-md hover:text-blue-500">  <FontAwesomeIcon icon={['fab', 'paypal']} />Paypal</a></span>
                     <span class="my-2"><a href="#" class="text-midnight  text-md hover:text-blue-500">Swish</a></span>
                 </div>
             </div>
@@ -31,7 +33,7 @@ function Footer() {
         <div class="mt-16 border-t-2 border-tahiti flex flex-col items-center">
             <div class="sm:w-2/3 text-center py-6">
                 <p class="text-sm text-midnight font-bold mb-2">
-                    © Malin Vallmark, 2022
+                    © 2022, Mem tarot
                 </p>
             </div>
         </div>

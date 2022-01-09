@@ -3,6 +3,7 @@ import React from "react";
 function AboutMe() {
   return(
     <>
+    <div className="flex flex-col items-center">
       <h1>About me - Malin Vallmark/Mem tarot</h1>
       <p>
         My name is Malin and I am an Intuitive Tarot Card Reader from Sweden. I
@@ -23,6 +24,7 @@ function AboutMe() {
         Clairvoyant (clear seeing, you see spirit and things from other
         dimensions)
       </p>
+      </div>
     </>
   )
 }
