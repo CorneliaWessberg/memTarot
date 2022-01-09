@@ -3,7 +3,6 @@ import Carousel from "./carousel";
 import Card from "./sessionCard";
 
 function Homepage() {
-   
   return (
     <>
       <div className="flex justify-center flex-col">
@@ -23,7 +22,6 @@ function Homepage() {
           loading="lazy"
           data-mc-src="30c2d221-dbb4-4808-beec-c63a46ebddfa#instagram"
         ></div>
-
       </div>
     </>
   );

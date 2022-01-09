@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "./images/logo.jpg";
-import NavigationMenu from "./navMenu";
+import NavigationMenu from "../navMenu";
 
 function Header() {
   //en navigation? någon meny
@@ -24,9 +24,10 @@ function Header() {
             height="300"
             alt="MemTarot"
           />
-          <Link to="/" className="text-xl ml-6 mt-10">Home</Link>
+          <Link to="/" className="text-xl ml-6 mt-10">
+            Home
+          </Link>
         </div>
-        <Link to="/sessionCard">Card</Link>
 
         <div className="basis-1/2">
           <NavigationMenu />

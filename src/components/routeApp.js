@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./header";
+import Header from "./head/header";
 import Homepage from "./homepage";
 import Footer from "./footer";
 import AboutMe from "./aboutMe";
@@ -9,7 +9,6 @@ import Calender from "./calender";
 import Youtube from "./youtube";
 import SessionList from "./sessions";
 import AddSession from "./addSession";
-import Card from "./sessionCard";
 
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
@@ -29,7 +28,6 @@ export default function RouteApp() {
           <Route path="/youtube" element={ <Youtube />} />
           <Route path="/sessions" element={ <SessionList />} />
           <Route path="/addSessions" element={ <AddSession />} />
-          <Route path="/sessionCard" element={ <Card />} />
         </Routes>
 
         <Footer />

@@ -1,9 +1,9 @@
 import React from "react"; 
 
-function Reviews() {
+function Dashboard() {
     return(
         <></>
     )
 }
 
-export default Reviews; 
+export default Dashboard; 
