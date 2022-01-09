@@ -13,11 +13,13 @@ body {
   /* max-width: 1536px; */
   min-height: 250vh;
   position: relative;
+  font-family: OpenSans;
 }
 
 .header {
   width: 100%;
 }
+
 
 .footer {
   position: absolute;

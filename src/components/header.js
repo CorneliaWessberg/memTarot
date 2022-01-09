@@ -24,8 +24,9 @@ function Header() {
             height="300"
             alt="MemTarot"
           />
-          <Link to="/">Home</Link>
+          <Link to="/" className="text-xl ml-6 mt-10">Home</Link>
         </div>
+        <Link to="/sessionCard">Card</Link>
 
         <div className="basis-1/2">
           <NavigationMenu />

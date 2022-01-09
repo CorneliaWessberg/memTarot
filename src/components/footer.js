@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Modal from "react-modal"; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Footer() {

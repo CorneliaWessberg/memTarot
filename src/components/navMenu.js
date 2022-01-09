@@ -7,9 +7,9 @@ function NavigationMenu() {
         <>
         <ul className="flex flex-row ">
             <li><Link to="/aboutMe">About me</Link></li>
-            <li><Link to="/aboutMe">Calender</Link></li>
-            <li><Link to="/aboutMe">Youtube</Link></li>
-            <li><Link to="/aboutMe">My sessions</Link></li>
+            <li><Link to="/calender">Calender</Link></li>
+            <li><Link to="/youtube">Youtube</Link></li>
+            <li><Link to="/sessionList">My sessions</Link></li>
         </ul>
         </>
     )

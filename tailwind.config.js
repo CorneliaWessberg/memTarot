@@ -1,7 +1,7 @@
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+    "./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+    darkMode: false,
   theme: {
     colors: {
       transparent: 'transparent',
@@ -14,6 +14,10 @@ module.exports = {
       'silver': '#ecebff',
       'bubble-gum': '#f5f5f4',
       'bermuda': '#78dcca',
+    },
+    fontFamily: {
+      'OpenSans': ['Open Sans', 'sans-serif'],
+      
     },
     extend: {},
   },
