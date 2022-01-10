@@ -13,8 +13,11 @@ import AddSession from "./admin/addSession";
 import Register from "./head/registration";
 import ProfilePage from "./user/profilePage";
 import Bookings from "./user/bookings";
+import Login from "./head/login";
+import Dashboard from "./admin/dashboard";
 
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+
 
 
 
@@ -34,10 +37,12 @@ export default function RouteApp() {
           <Route path="/calender" element={ <Calender />} />
           <Route path="/youtube" element={ <Youtube />} />
           <Route path="/sessions" element={ <SessionList />} />
-          <Route path="/addSessions" element={ <AddSession />} />
+          <Route path="/addSession" element={ <AddSession />} />
           <Route path="/registration" element={ <Register />} />
           <Route path="/profilePage" element={ <ProfilePage />} />
           <Route path="/bookings" element={ <Bookings />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
 
         <Footer />

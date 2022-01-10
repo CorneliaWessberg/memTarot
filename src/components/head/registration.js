@@ -9,13 +9,13 @@ function Register() {
   };
 
   const [regValues, setRegValues] = useState(initialValues);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [sucess, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
   function onChange(e) {
     setRegValues({ ...regValues, [e.target.name]: e.target.value });
 
-    console.log(regValues)
+    console.log(regValues);
   }
 
   function onSubmit(e) {
@@ -23,12 +23,12 @@ function Register() {
 
     const response = axios
       .post("http://localhost:1337/api/auth/local/register", {
-        username: regValues.username, 
+        username: regValues.username,
         email: regValues.email,
         password: regValues.password,
       })
       .then((e) => {
-        if (e.data.user) setLoggedIn(true);
+        if (e.data.user) setSuccess(true);
       })
       .catch((err) => {
         setError("Something went wrong, try again!");
@@ -39,7 +39,7 @@ function Register() {
 
   return (
     <>
-    {/* Hur till strapi så det fungerar? utan error*/}
+      {/* Hur till strapi så det fungerar? utan error*/}
       <div className="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
         <div className="py-8 px-8 rounded-xl">
           <h1 className="font-medium text-2xl mt-3 text-center">

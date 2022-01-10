@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "./carousel";
 import Card from "../user/sessionCard";
+import { Link } from "react-router-dom";
 
 function Homepage() {
   return (
@@ -12,6 +13,12 @@ function Homepage() {
           <Card />
           <Card />
         </div>
+        <div className="flex w-full">
+          <Link to="./sessions" className="items-right content-end">
+            See all..{" "}
+          </Link>
+        </div>
+
         {/*Product cards,
         2-cards with 2 of the sessions. 
         Link besides "show more", links to My session side

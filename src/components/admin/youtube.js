@@ -5,7 +5,7 @@ function Youtube() {
     <>
       <div className="flex items-center flex-col">
         <div className="justify-center">
-          <h1 className="text-center">Videos from my youtube-channel</h1>
+          <h1 className="text-center">Mem-taros youtube channel</h1>
           <iframe className="mb-10"
             width="680"
             height="400"

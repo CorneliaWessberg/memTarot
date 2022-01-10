@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function NavigationMenu() {
   return (
     <>
-    <FontAwesomeIcon icon={['fab', 'Home']} />
+    
       <Link to="/" className="text-xl ml-6 ">
         Home
       </Link>
@@ -34,6 +34,9 @@ function NavigationMenu() {
         <Link to="/addSession" className="ml-8">
             Add a session/product
           </Link>
+          </li>
+          <li>
+              <Link to="/dashboard" className="ml-8">Dashboard</Link>
           </li>
       </ul>
     </>
