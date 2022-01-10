@@ -7,19 +7,42 @@
   display: flex;
   justify-content: center; 
   flex-direction: column;
+  min-height: 100%;
+  
 } 
 
 body {
   /* max-width: 1536px; */
-  min-height: 250vh;
   position: relative;
+  min-height: 280vh; 
+  height: auto;
   font-family: OpenSans;
 }
 
 .header {
   width: 100%;
 }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
+.dropdown-content {
+ 
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    color: black
+  
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
 
 .footer {
   position: absolute;

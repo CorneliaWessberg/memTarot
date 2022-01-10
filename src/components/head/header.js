@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import logo from "./images/logo.jpg";
-import NavigationMenu from "../navMenu";
+import Modal from "react-modal";
+import logo from "../images/logo.jpg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Login from "./login"; 
 
 function Header() {
   //en navigation? någon meny
@@ -13,31 +15,76 @@ function Header() {
 
   //ikon bredvid, när inloggad. bookade sessions eller varukorg.
 
+  const customStyles = {
+    content: {
+      background: "white",
+      top: '40%',
+      left: '47%',
+      right: 'auto',
+      bottom: 'auto',
+      width: '40%',
+      transform: 'translate(-40%, -10%)'
+    }
+  };
+
+  const [openModal, setOpenModal] = useState(false);
+  const [jwt, setJwt] = useState(""); 
+
+  useEffect(() => {
+
+    const JWT = localStorage.getItem("jwt")
+    setJwt(JWT);
+
+  }, []);
+
+  function modalOpen() {
+    setOpenModal(true)
+  }
+
+  function modalClose() {
+    setOpenModal(false)
+  }
+
   return (
     <>
-      <div class="header" className="flex w-full gap-y-0.5">
-        <div className="basis-2/4">
+      <div class="header" className="flex w-full">
+        <div className="">
           <img
-            className="rounded self-start py-2 px-2"
+            className="rounded self-start "
             src={logo}
             width="300"
             height="300"
             alt="MemTarot"
           />
-          <Link to="/" className="text-xl ml-6 mt-10">
-            Home
-          </Link>
         </div>
 
-        <div className="basis-1/2">
-          <NavigationMenu />
-        </div>
-
-        <div className="flex-1 items-end basis-1/4">
-          <Link to="/login">Login</Link>
-          <Link to="/bookings">My Bookings</Link>
+    
+      {/*Conditional rendering, inloggad eller inte. jwt?
+      Dropdown lättare med js??
+      Fontawesome ikoner?*/}
+        <div className="flex-1  basis-1/4 text-right mt-10">
+          <div class="dropdown">
+          <h1 className="mr-4 text-l" >Login/My account</h1>
+          <div class="dropdown-content">
+            <button onClick={modalOpen}>Login/register</button><br/>
+            <Link to="./profilePage">My account</Link><br/>
+            <a>Logout</a>
+          </div>
+          </div>
+          <Link to="/bookings" className="mr-20 text-l">My Bookings</Link>
         </div>
       </div>
+
+      <Modal
+        isOpen={openModal}
+        onRequestClose={modalClose}
+        style={customStyles}
+        ariaHideApp={false}
+        contentLabel="Example Modal">
+          <button onClick={modalClose}>X</button>
+          {/*condionital rendering så register componenten visas när klickar på register? */}
+          <Login />
+        </Modal>
     </>
   );
 }

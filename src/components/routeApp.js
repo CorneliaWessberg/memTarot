@@ -1,16 +1,22 @@
 import React from "react";
 import Header from "./head/header";
-import Homepage from "./homepage";
-import Footer from "./footer";
-import AboutMe from "./aboutMe";
-import Carousel from "./carousel";
-import Contact from "./contact";
-import Calender from "./calender";
-import Youtube from "./youtube";
-import SessionList from "./sessions";
-import AddSession from "./addSession";
+import NavigationMenu from "./head/navMenu";
+import Homepage from "./landingpage/homepage";
+import Footer from "./landingpage/footer";
+import AboutMe from "./admin/aboutMe";
+import Carousel from "./landingpage/carousel";
+import Contact from "./admin/contact";
+import Calender from "./user/calender";
+import Youtube from "./admin/youtube";
+import SessionList from "./user/sessions";
+import AddSession from "./admin/addSession";
+import Register from "./head/registration";
+import ProfilePage from "./user/profilePage";
+import Bookings from "./user/bookings";
 
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+
+
 
 
 export default function RouteApp() {
@@ -18,6 +24,7 @@ export default function RouteApp() {
     <>
       <Router>
         <Header />
+        <NavigationMenu />
 
         <Routes>
           <Route path="/" element={ <Homepage /> } />
@@ -28,6 +35,9 @@ export default function RouteApp() {
           <Route path="/youtube" element={ <Youtube />} />
           <Route path="/sessions" element={ <SessionList />} />
           <Route path="/addSessions" element={ <AddSession />} />
+          <Route path="/registration" element={ <Register />} />
+          <Route path="/profilePage" element={ <ProfilePage />} />
+          <Route path="/bookings" element={ <Bookings />} />
         </Routes>
 
         <Footer />
