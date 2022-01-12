@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios"; 
+import axios from "axios";
 
 function AddSession() {
   const initialValues = {
@@ -12,47 +12,45 @@ function AddSession() {
   const [addValues, setAddValues] = useState(initialValues);
   const [fileData, setFileData] = useState();
   const [success, setSuccess] = useState(false);
-  
 
   function onChange(e) {
     setAddValues({ ...addValues, [e.target.name]: e.target.value });
-    console.log(addValues)
+    console.log(addValues);
   }
 
   function onSubmit(e) {
     e.preventDefault();
 
-    axios.post("https://localhost:1337/api:products", {
-      title: addValues.title,
-      description: addValues.description,
-      time: addValues.time,
-      price: addValues.price,
+    axios
+      .post("https://localhost:1337/api:products", {
+        title: addValues.title,
+        description: addValues.description,
+        time: addValues.time,
+        price: addValues.price,
+      })
+      .then((res) => {
+        console.log(res.data);
 
-    }).then((res) => {
+        const data = new FormData();
 
-      console.log(res.data)
+        data.append("files", fileData);
+        data.append("ref", "product");
+        data.append("refId", res.data.id);
+        data.append("field", "img");
 
-      const data = new FormData();
-
-      data.append("files", fileData)
-      data.append("ref", "product")
-      data.append("refId", res.data.id)
-      data.append("field", "img")
-
-      axios.post("http://localhost:1337/api/product", data)
-        .then((image) => console.log(image))
-        .catch((error) => console.log(error))
-
-    }).catch((err) => {
-      console.log(err)
-
-    })
-    setSuccess(true)
-    
+        axios
+          .post("http://localhost:1337/api/product", data)
+          .then((image) => console.log(image))
+          .catch((error) => console.log(error));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    setSuccess(true);
   }
 
   function onChangeImg(e) {
-    setFileData(e.target.files[0])
+    setFileData(e.target.files[0]);
   }
 
   return (
@@ -67,7 +65,7 @@ function AddSession() {
           <form method="post" className="mt-8 space-y-6" onSubmit={onSubmit}>
             <div>
               <label for="titel" className="sr-only">
-              Title
+                Title
               </label>
               <input
                 id="titel"
@@ -133,7 +131,7 @@ function AddSession() {
 
             <button
               type="submit"
-              class="group relative w-full flex justify-center border border-transparent text-gray-800 px-4 py-3 bg-gray-300 rounded hover:bg-gray-800 hover:text-white transition duration-200 mt-12"
+              class="group relative w-full flex justify-center border border-transparent text-white px-4 py-3 bg-stone-400 rounded hover:bg-stone-500 hover:text-white transition duration-200 mt-12"
             >
               <span className="absolute left-0 inset-y-0 flex items-center pl-3"></span>
               Add session

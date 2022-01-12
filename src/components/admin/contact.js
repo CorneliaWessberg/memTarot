@@ -3,9 +3,9 @@ import React from "react";
 function Contact() {
   return (
     <>
-      <div className="flex flex-col  items-center mt-9">
-          <h1 className="mb-5">How can I help you?</h1>
-          <p className="mb-3">Any questions or thoughts contact me here, I try to answer as quickly as possible!</p>
+      <div className="flex flex-col  items-center mt-28">
+          <h1 className="mb-6 text-xl">How can I help you?</h1>
+          <p className="mb-10 text-lg">Any questions or thoughts contact me here, I try to answer as quickly as possible!</p>
         <form className="w-full max-w-lg">
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -54,7 +54,7 @@ function Contact() {
           <div className="md:flex md:items-center">
             <div className="md:w-1/3 items-center">
               <button
-                className="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-metal font-bold py-2 px-4 rounded"
+                className="shadow text-center text-white bg-stone-400 p-3 duration-300 rounded-md hover:bg-stone-500 w-2/4"
                 type="button"
               >
                 Send
@@ -63,7 +63,7 @@ function Contact() {
             <div className="md:w-2/3"></div>
           </div>
         </form>
-        <h1 className="items-start">Email: memtarot@gmail.com</h1>
+        <h1 className="text-start mt-10">Email: memtarot@gmail.com</h1>
       </div>
     </>
   );

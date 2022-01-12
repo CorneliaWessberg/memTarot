@@ -29,7 +29,7 @@ function Header() {
 
   const [openModal, setOpenModal] = useState(false);
   const [jwt, setJwt] = useState("");
-  const isAdmin = localStorage.getItem("role")
+  const isAdmin = localStorage.getItem("role");
 
   useEffect(() => {
     const JWT = localStorage.getItem("jwt");
@@ -46,32 +46,42 @@ function Header() {
 
   return (
     <>
-      <div class="header" className="flex w-full">
+      <div class="header" className="flex w-full ml-10 mt-6">
         <div>
-          <Link to="/"><img
-            className="rounded self-start "
-            src={logo}
-            width="300"
-            height="300"
-            alt="MemTarot"
-          /></Link>
+          <Link to="/">
+            <img
+              className="rounded self-start "
+              src={logo}
+              width="300"
+              height="300"
+              alt="MemTarot"
+              loading="lazy"
+            />
+          </Link>
         </div>
 
         {/*Conditional rendering, inloggad eller inte. jwt?
       Dropdown lättare med js??
       Fontawesome ikoner?*/}
-        <div className="flex-1  basis-1/4 text-right mt-10">
+        <div className="flex-1  basis-1/4 text-right mt-6">
           <div class="dropdown">
-            <h1 className="mr-4 text-l">Login/My account</h1>
+            <h1 className="mr-4 text-l hover:underline hover:text-neutral-500">
+              Login/My account
+            </h1>
             <div class="dropdown-content">
-              <Link to="./login">Login/register</Link>
+              <Link to="./login" id="login">
+                Login/register
+              </Link>
               <br />
               <Link to="./profilePage">My account</Link>
               <br />
               <a>Logout</a>
             </div>
           </div>
-          <Link to="/bookings" className="mr-20 text-l">
+          <Link
+            to="/bookings"
+            className="mr-28 text-l hover:underline hover:text-neutral-500"
+          >
             My Bookings
           </Link>
         </div>

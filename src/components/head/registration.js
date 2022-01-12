@@ -43,7 +43,7 @@ function Register() {
   return (
     <>
       {/* Hur till strapi så det fungerar? utan error*/}
-      <div className="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
+      <div className="bg-white lg:w-5/12 md:6/12 w-10/12 m-auto my-10 shadow-md mt-36">
         <div className="py-8 px-8 rounded-xl">
           <h1 className="font-medium text-2xl mt-3 text-center">
             Register here
@@ -100,13 +100,13 @@ function Register() {
               <div className="flex justify-end mt-2 text-xs text-gray-600"></div>
             </div>
 
-            <button className="block text-center text-metal bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full">
+            <button className="hover:bg-stone-500 w-1/4 block text-center text-white bg-stone-400 p-3 duration-300 rounded-sm">
               Register
             </button>
             
-            <p class="mt-12 text-xs text-center font-light text-gray-400">
+            <p class="mt-12 text-s text-center font-light text-stone-600">
             Already a member?
-            <Link to="/login" class="text-black font-medium">
+            <Link to="/login" class="text-stone-700 font-medium ml-2 hover:underline hover:text-stone-900">
               Back to login
             </Link>
             </p>

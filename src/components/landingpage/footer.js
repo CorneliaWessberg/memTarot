@@ -5,67 +5,66 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Footer() {
   return (
     <>
-      <footer class="footer bg-bubble-gum relative pt-1 ">
-        <div class="container mx-auto px-6">
-          <div class="sm:flex sm:mt-8">
-            <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
-              <div class="flex flex-col">
-                <span class="font-bold text-midnight uppercase mb-2">
+      <footer className="footer bg-bubble-gum relative pt-1 ">
+        <div className="container mx-auto px-6">
+          <div className="sm:flex sm:mt-8">
+            <div className="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
+              <div className="flex flex-col">
+                <span className="font-bold uppercase mb-2">
                   Contact
                 </span>
-                <span class="my-2">
+                <span className="my-2">
                   <Link
                     to="./aboutMe"
-                    class="text-midnight  text-md hover:text-blue-500"
+                    className="text-midnight  text-lg hover:text-neutral-500"
                   >
                     About Mem tarot
                   </Link>
                 </span>
-                <span class="my-2">
+                <span className="my-2">
                   <Link
                     to="./contact"
-                    class="text-midnight  text-md hover:text-blue-500"
+                    className="text-midnight  text-lg hover:text-neutral-500"
                   >
                     Contact me
                   </Link>
                 </span>
               </div>
-              <div class="flex flex-col">
-                <span class="font-bold text-midnight uppercase mt-4 md:mt-0 mb-2">
+              <div className="flex flex-col">
+                <span className="font-bold uppercase mt-4 md:mt-0 mb-2">
                   Social media
                 </span>
-                <span class="my-2">
-                  <a href="#" class="text-midnight text-md hover:text-blue-500">
+                <span className="my-2">
+                  <a href="#" className="text-lg hover:text-neutral-500">
                     <FontAwesomeIcon icon={["fab", "instagram"]} /> MemTarot
                   </a>
                 </span>
-                <span class="my-2">
+                <span className="my-2">
                   <a
                     href="#"
-                    class="text-midnight  text-md hover:text-blue-500"
+                    className="text-lg hover:text-neutral-500"
                   >
                     <FontAwesomeIcon icon={["fab", "youtube"]} /> MemTarot
                   </a>
                 </span>
               </div>
-              <div class="flex flex-col">
-                <span class="font-bold text-midnight uppercase mt-4 md:mt-0 mb-2">
+              <div className="flex flex-col">
+                <span className="font-bold uppercase mt-4 md:mt-0 mb-2">
                   Payments
                 </span>
-                <span class="my-2">
+                <span className="my-2">
                   <a
                     href="#"
-                    class="text-midnight  text-md hover:text-blue-500"
+                    className="text-lg hover:text-neutral-500"
                   >
-                    {" "}
                     <FontAwesomeIcon icon={["fab", "paypal"]} />
                     Paypal
                   </a>
                 </span>
-                <span class="my-2">
+                <span className="my-2">
                   <a
                     href="#"
-                    class="text-midnight  text-md hover:text-blue-500"
+                    className="  text-lg hover:text-neutral-500"
                   >
                     Swish
                   </a>

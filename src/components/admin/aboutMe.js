@@ -12,6 +12,7 @@ function AboutMe() {
           width="500"
           height="500"
           alt="MemTarot"
+          loading="lazy"
         />
         <h1 className="mb-8 mt-6 font-OpenSans font-bold text-xl">About me - Malin Vallmark/Mem tarot</h1>
         <p className="font-OpenSans text-lg leading-8">

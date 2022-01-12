@@ -50,7 +50,7 @@ function Login() {
 
   return (
     <>
-      <div class="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
+      <div class="bg-white lg:w-5/12 md:6/12 w-10/12 m-auto my-10 shadow-md mt-36">
         <div class="py-8 px-8 rounded-xl">
           <h1 class="font-medium text-2xl mt-3 text-center">Login</h1>
           <h1>{error}</h1>
@@ -63,7 +63,7 @@ function Login() {
                 id="username"
                 value={logInValues.email}
                 onChange={onChange}
-                class="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                className="rounded-md px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
                 placeholder="E-mail"
               />
             </div>
@@ -75,20 +75,20 @@ function Login() {
                 id="password"
                 value={logInValues.password}
                 onChange={onChange}
-                class="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                className="px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full rounded-md"
                 placeholder="Password"
               />
           
             </div>
 
-            <button class="block text-center text-metal bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full">
+            <button className="block text-center text-white bg-stone-400 p-3 duration-300 rounded-md hover:bg-stone-500 w-1/4">
               Login
             </button>
           </form>
 
-          <p class="mt-12 text-xs text-center font-light text-gray-400">
+          <p className="mt-12 text-s text-center font-light text-stone-600">
             Don't have an account?
-            <Link to="/registration" class="text-black font-medium">
+            <Link to="/registration" className="text-stone-700 font-medium ml-2 hover:underline hover:text-stone-900">
               Create One
             </Link>
           </p>

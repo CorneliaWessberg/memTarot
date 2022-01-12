@@ -17,6 +17,7 @@ body {
   min-height: 280vh; 
   height: auto;
   font-family: OpenSans;
+  color: #57534e;
 }
 
 .header {
@@ -31,21 +32,33 @@ body {
  
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: white;
+    border: solid 0.8px #a8a29e;
+    border-radius: 8px; 
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    color: black
+    color: black;
+    text-align: center;
+    padding: 0.6rem;
+    line-height: 2rem;
   
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {border-bottom: solid 1px black;}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
+#login {
+  background-color: #a8a29e;
+  padding: 0.5rem;
+  color: white; 
+}
+
 .footer {
   position: absolute;
+  background-color: #a8a29e;
   bottom: 0; 
   width: 100%;
 }
