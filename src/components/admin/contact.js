@@ -16,14 +16,11 @@ function Contact() {
                 Name
               </label>
               <input
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 id="grid-first-name"
                 type="text"
                 placeholder="name"
               ></input>
-              <p className="text-red-500 text-xs italic">
-                Please fill out this field.
-              </p>
             </div>
             <div className="w-full md:w-1/2 px-3">
               <label

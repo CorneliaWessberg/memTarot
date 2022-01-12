@@ -29,6 +29,7 @@ function Header() {
 
   const [openModal, setOpenModal] = useState(false);
   const [jwt, setJwt] = useState("");
+  const isAdmin = localStorage.getItem("role")
 
   useEffect(() => {
     const JWT = localStorage.getItem("jwt");
@@ -47,13 +48,13 @@ function Header() {
     <>
       <div class="header" className="flex w-full">
         <div>
-          <img
+          <Link to="/"><img
             className="rounded self-start "
             src={logo}
             width="300"
             height="300"
             alt="MemTarot"
-          />
+          /></Link>
         </div>
 
         {/*Conditional rendering, inloggad eller inte. jwt?

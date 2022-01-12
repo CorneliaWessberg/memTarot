@@ -26,7 +26,7 @@ function NavigationMenu() {
           </Link>
         </li>
         <li>
-          <Link to="/sessionList" className="">
+          <Link to="/sessions" className="">
             My sessions
           </Link>
         </li>

@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Carousel from "./carousel";
 import Card from "../user/sessionCard";
 import { Link } from "react-router-dom";
 
 function Homepage() {
+  const username = useState(localStorage.getItem("username")); 
+  
   return (
     <>
+    <h1 className="text-center">Welcome {username} !</h1>
       <div className="flex justify-center flex-col">
         {/*Carousel*/}
 
@@ -13,9 +16,9 @@ function Homepage() {
           <Card />
           <Card />
         </div>
-        <div className="flex w-full">
-          <Link to="./sessions" className="items-right content-end">
-            See all..{" "}
+        <div className="text-right mr-4">
+          <Link to="./sessions">
+            See all..
           </Link>
         </div>
 
