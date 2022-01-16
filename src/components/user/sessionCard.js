@@ -1,36 +1,43 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
-
-function SessionCard({title, description, time, price, image }) {
-
-  const props = {title, description, time, price, image }
+function SessionCard({ items }) {
+  // const  { productId, title, description, time, price, image } = items;
 
   return (
     <>
-      <div className="p-20">
-        <div className="bg-white rounded-lg shadow-2xl md:flex">
-        <img  alt=""  className="md:w-1/3 rounded-t-lg md:rounded-l-lg md:rounded-t-none" />
+      <div
+        className="italic w-96 my-4 max-h-150 p-5 rounded-md overflow-hidden shadow-lg flex justify-center"
+        
+      >
+        <div className="justify-center text-center px-4 py-4">
+          <div className="font-bold text-xl mb-2 p-3.5">Title</div>
+          <img
+          />
+          <p className="text-gray-700 text-base p-2">
+            description
+          </p>
+          <p className="text-gray-700 text-base p-2">
+            time
+          </p>
+          <p className="text-gray-700 text-base p-2">
+          price
+          </p>
+          <div className="px-6 pt-4 pb-2">
+            <Link to="/calender"><button
+              className="block text-center text-white bg-stone-400 p-3 duration-300 rounded-md hover:bg-stone-500 w-full"
+            >
+              Book in calender
+            </button></Link>
+
            
-          
-          <div className="p-6">
-            <h2 className="font-bold text-xl md:text-3xl mb-2 text-orange-700">
-             { title } 
-            </h2>
-            <p className="text-orange-700">
-               {description} 
-            </p>
-            <h2 className="font-bold text-xl md:text-3xl mb-2 text-orange-700">
-               {time}
-            </h2>
-            <h2 className="font-bold text-xl md:text-3xl mb-2 text-orange-700">
-               {price}  kr
-            </h2>
           </div>
         </div>
       </div>
+     
     </>
-  )
+  );
 }
 
 export default SessionCard;

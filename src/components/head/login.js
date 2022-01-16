@@ -50,7 +50,7 @@ function Login() {
 
   return (
     <>
-      <div class="bg-white lg:w-5/12 md:6/12 w-10/12 m-auto my-10 shadow-md mt-36">
+      <div class="bg-white lg:w-full md:6/12 w-10/12 m-auto my-10 shadow-md mt-36">
         <div class="py-8 px-8 rounded-xl">
           <h1 class="font-medium text-2xl mt-3 text-center">Login</h1>
           <h1>{error}</h1>

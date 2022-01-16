@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Footer() {
   return (
     <>
-      <footer className="footer bg-bubble-gum relative pt-1 ">
+      <footer className="footer bg-bubble-gum w-full pt-1 ">
         <div className="container mx-auto px-6">
           <div className="sm:flex sm:mt-8">
             <div className="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
@@ -44,7 +44,7 @@ function Footer() {
                     href="#"
                     className="text-lg hover:text-neutral-500"
                   >
-                    <FontAwesomeIcon icon={["fab", "youtube"]} /> MemTarot
+                    <FontAwesomeIcon icon={["fab", "youtube"]}  /> MemTarot
                   </a>
                 </span>
               </div>

@@ -4,7 +4,6 @@ import NavigationMenu from "./head/navMenu";
 import Homepage from "./landingpage/homepage";
 import Footer from "./landingpage/footer";
 import AboutMe from "./admin/aboutMe";
-import Carousel from "./landingpage/carousel";
 import Contact from "./admin/contact";
 import Calender from "./user/calender";
 import Youtube from "./admin/youtube";
@@ -29,10 +28,11 @@ export default function RouteApp() {
         <Header />
         <NavigationMenu />
 
+        <div id="content">
+        <div id="content-inside">
         <Routes>
           <Route path="/" element={ <Homepage /> } />
           <Route path="/aboutMe" element={ <AboutMe /> } />
-          <Route path="/carousel" element={ <Carousel />} />
           <Route path="/contact" element={ <Contact />} />
           <Route path="/calender" element={ <Calender />} />
           <Route path="/youtube" element={ <Youtube />} />
@@ -44,6 +44,8 @@ export default function RouteApp() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sessions" element={<SessionList />} />
         </Routes>
+        </div>
+        </div>
 
         <Footer />
       </Router>

@@ -5,14 +5,18 @@ import { Link } from "react-router-dom";
 
 function Homepage() {
   const username = useState(localStorage.getItem("username")); 
-  
+
   return (
     <>
+    <div>
     <h1 className="text-center">Welcome {username} !</h1>
       <div className="flex justify-center flex-col">
         {/*Carousel*/}
-
-        <div className="flex flex-row items-center ">
+    <Carousel />
+    
+        <div className="flex flex-row flex-wrap items-center justify-around">
+          <Card />
+          <Card />
           <Card />
           <Card />
         </div>
@@ -32,6 +36,7 @@ function Homepage() {
           loading="lazy"
           data-mc-src="30c2d221-dbb4-4808-beec-c63a46ebddfa#instagram"
         ></div>
+      </div>
       </div>
     </>
   );

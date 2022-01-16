@@ -31,9 +31,13 @@ function Register() {
         password: regValues.password,
       })
       .then((e) => {
+        console.log("hej");
+        console.log('User profile', response.data.user);
+        console.log('User token', response.data.jwt);
         if (e.data.user) setSuccess(true);
       })
       .catch((err) => {
+        console.log("error");
         setError("Something went wrong, try again");
       });
 
@@ -43,7 +47,7 @@ function Register() {
   return (
     <>
       {/* Hur till strapi så det fungerar? utan error*/}
-      <div className="bg-white lg:w-5/12 md:6/12 w-10/12 m-auto my-10 shadow-md mt-36">
+      <div className="bg-white lg:w-full md:6/12 w-full m-auto my-10 shadow-md mt-36">
         <div className="py-8 px-8 rounded-xl">
           <h1 className="font-medium text-2xl mt-3 text-center">
             Register here

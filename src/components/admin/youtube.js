@@ -3,39 +3,30 @@ import React from "react";
 function Youtube() {
   return (
     <>
-      <div className="flex items-center flex-col">
+      <div className="flex items-center flex-col mt-16">
         <div className="justify-center">
-          <h1 className="text-center">Mem-taros youtube channel</h1>
+          <h1 className="text-center text-xl mb-10">Welcome to my youtube channel!</h1>
           <iframe className="mb-10"
             width="680"
             height="400"
             src="https://www.youtube.com/embed/BOAa5MpQAMM"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
           <iframe className="mb-10"
             width="680"
             height="400"
             src="https://www.youtube.com/embed/UZf0OrtIlVI"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
-          <iframe className="mb-10"
-            width="680"
-            height="400"
-            src="https://www.youtube.com/embed/e0aE98I5WTQ"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-          <p className="text-center">
-          if you wanna see more check out my full youtube-channel here - <br />
-          https://www.youtube.com/channel/UCSFkDBop1A3xgtRG5twcL8w</p>
+          <p className="text-center text-lg">
+          if you wanna see more check out my full youtube-channel here</p>
+          <p className="text-center text-lg hover:underline hover:text-xl hover:text-stone-600">https://www.youtube.com/channel/UCSFkDBop1A3xgtRG5twcL8w</p>
         </div>
       </div>
     </>
