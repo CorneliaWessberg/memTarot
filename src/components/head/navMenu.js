@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { AiOutlineMenu } from "react-icons/ai";
 
-function NavigationMenu({ fixed }) {
+function NavigationMenu() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <>
       <nav
-        className="relative flex flex-wrap items-center justify-between px-2 py-5 mt-8 mb-3 font-bold text-white opacity-50"
+        className="relative flex flex-wrap items-center justify-between py-5 mt-8 mb-3 font-bold text-white opacity-50"
         id="navBar"
       >
-        <div className="container flex flex-wrap items-center justify-between mx-auto">
+        <div className="flex flex-wrap items-center justify-center w-full ml-8 mr-8">
           <div className="relative flex justify-between w-full lg:w-auto lg:static lg:block lg:justify-start">
             <Link
               to="/"
-              className="flex flex-row justify-start -ml-6 text-lg hover:underline underline-offset-4 hover:text-neutral-500 focus:underline"
+              className="flex flex-row justify-start text-lg hover:underline underline-offset-4 hover:text-neutral-500 focus:underline"
             >
               <FaHome size={20} className="mt-1 mr-2" /> Home
             </Link>
@@ -70,7 +70,7 @@ function NavigationMenu({ fixed }) {
               <li className="nav-item">
                 <Link
                   to="/dashboard"
-                  className="mr-8 text-lg hover:underline underline-offset-4 hover:text-neutral-500 focus:underline"
+                  className="text-lg hover:underline underline-offset-4 hover:text-neutral-500 focus:underline"
                 >
                   Dashboard
                 </Link>
