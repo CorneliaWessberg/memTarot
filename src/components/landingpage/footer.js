@@ -35,13 +35,13 @@ function Footer() {
                   Social media
                 </span>
                 <span className="my-2">
-                  <a href="#" className="text-lg hover:text-neutral-500">
+                  <a href="https://www.instagram.com/mem__tarot/" className="text-lg hover:text-neutral-500">
                     <FontAwesomeIcon icon={["fab", "instagram"]} /> MemTarot
                   </a>
                 </span>
                 <span className="my-2">
                   <a
-                    href="#"
+                    href="https://www.youtube.com/results?search_query=mem+tarot"
                     className="text-lg hover:text-neutral-500"
                   >
                     <FontAwesomeIcon icon={["fab", "youtube"]}  /> MemTarot

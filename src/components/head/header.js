@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.jpg";
 import { FaRegUser, FaCalendarWeek } from "react-icons/fa";
-import Searchbar from "../searchbar";
+import Searchbar from "./searchbar";
 
 function Header() {
   //Header med logo + Login/my account button links

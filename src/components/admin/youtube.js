@@ -3,9 +3,9 @@ import React from "react";
 function Youtube() {
   return (
     <>
-      <div className="flex items-center flex-col mt-16">
+      <div className="flex flex-col items-center mt-16">
         <div className="justify-center">
-          <h1 className="text-center text-xl mb-10">Welcome to my youtube channel!</h1>
+          <h1 className="mb-10 text-xl text-center">Welcome to my youtube channel!</h1>
           <iframe className="mb-10"
             width="680"
             height="400"
@@ -24,9 +24,7 @@ function Youtube() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <p className="text-center text-lg">
-          if you wanna see more check out my full youtube-channel here</p>
-          <p className="text-center text-lg hover:underline hover:text-xl hover:text-stone-600">https://www.youtube.com/channel/UCSFkDBop1A3xgtRG5twcL8w</p>
+          <a href="https://www.youtube.com/channel/UCSFkDBop1A3xgtRG5twcL8w">See more..</a>
         </div>
       </div>
     </>

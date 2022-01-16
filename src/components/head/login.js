@@ -50,7 +50,7 @@ function Login() {
 
   return (
     <>
-      <div class="bg-white lg:w-full md:6/12 w-10/12 m-auto my-10 shadow-md mt-36">
+      <div class="m-auto my-10 bg-white shadow-md lg:w-7/12 mt-36">
         <div class="py-8 px-8 rounded-xl">
           <h1 class="font-medium text-2xl mt-3 text-center">Login</h1>
           <h1>{error}</h1>
@@ -63,7 +63,7 @@ function Login() {
                 id="username"
                 value={logInValues.email}
                 onChange={onChange}
-                className="rounded-md px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                className="w-full px-4 py-3 mt-3 bg-gray-100 rounded-md focus:outline-none"
                 placeholder="E-mail"
               />
             </div>
@@ -75,20 +75,20 @@ function Login() {
                 id="password"
                 value={logInValues.password}
                 onChange={onChange}
-                className="px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full rounded-md"
+                className="w-full px-4 py-3 mt-3 bg-gray-100 rounded-md focus:outline-none"
                 placeholder="Password"
               />
           
             </div>
 
-            <button className="block text-center text-white bg-stone-400 p-3 duration-300 rounded-md hover:bg-stone-500 w-1/4">
+            <button className="block w-1/4 p-3 text-center text-white duration-300 rounded-md bg-stone-400 hover:bg-stone-500">
               Login
             </button>
           </form>
 
-          <p className="mt-12 text-s text-center font-light text-stone-600">
+          <p className="mt-12 font-light text-center text-s text-stone-600">
             Don't have an account?
-            <Link to="/registration" className="text-stone-700 font-medium ml-2 hover:underline hover:text-stone-900">
+            <Link to="/registration" className="ml-2 font-medium text-stone-700 hover:underline hover:text-stone-900">
               Create One
             </Link>
           </p>

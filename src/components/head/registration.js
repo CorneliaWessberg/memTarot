@@ -47,19 +47,21 @@ function Register() {
   return (
     <>
       {/* Hur till strapi så det fungerar? utan error*/}
-      <div className="bg-white lg:w-full md:6/12 w-full m-auto my-10 shadow-md mt-36">
-        <div className="py-8 px-8 rounded-xl">
-          <h1 className="font-medium text-2xl mt-3 text-center">
+      <div>
+        <h1 className="mt-16 text-xl font-bold text-center">Welcome to the Mem-tarot family :)</h1>
+      <div className="m-auto my-10 mt-16 bg-white shadow-md lg:w-7/12">
+        <div className="px-8 py-8 rounded-xl">
+          <h1 className="mt-3 text-2xl font-medium text-center">
             Register here
           </h1>
-          <h1 className="text-center mt-4">{error}</h1>
+          <h1 className="mt-4 text-center">{error}</h1>
           <form action="" className="mt-6" onSubmit={onSubmit}>
             <div className="my-5 text-sm">
               <label className="block text-black">First name:</label>
               <input
                 type="text"
                 id="firstname"
-                className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                className="w-full px-4 py-3 mt-3 bg-gray-100 rounded-sm focus:outline-none"
                 placeholder="First name"
                 value={regValues.firstname}
                 name="firstname"
@@ -71,7 +73,7 @@ function Register() {
               <input
                 type="text"
                 id="lastname"
-                className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                className="w-full px-4 py-3 mt-3 bg-gray-100 rounded-sm focus:outline-none"
                 placeholder="Last name"
                 value={regValues.lastname}
                 name="lastname"
@@ -83,7 +85,7 @@ function Register() {
               <input
                 type="text"
                 id="email"
-                className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                className="w-full px-4 py-3 mt-3 bg-gray-100 rounded-sm focus:outline-none"
                 placeholder="E-mail"
                 value={regValues.email}
                 name="email"
@@ -95,7 +97,7 @@ function Register() {
               <input
                 type="password"
                 id="password"
-                className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                className="w-full px-4 py-3 mt-3 bg-gray-100 rounded-sm focus:outline-none"
                 placeholder="Password"
                 value={regValues.password}
                 name="password"
@@ -104,7 +106,7 @@ function Register() {
               <div className="flex justify-end mt-2 text-xs text-gray-600"></div>
             </div>
 
-            <button className="hover:bg-stone-500 w-1/4 block text-center text-white bg-stone-400 p-3 duration-300 rounded-sm">
+            <button className="block w-1/4 p-3 text-center text-white duration-300 rounded-sm hover:bg-stone-500 bg-stone-400">
               Register
             </button>
             
@@ -116,6 +118,7 @@ function Register() {
             </p>
           </form>
         </div>
+      </div>
       </div>
     </>
   );
