@@ -5,18 +5,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Footer() {
   return (
     <>
-      <footer className="footer bg-bubble-gum w-full pt-1 ">
-        <div className="container mx-auto px-6">
+      <footer className="w-full pt-1 opacity-90 footer ">
+        <div className="container px-6 mx-auto">
           <div className="sm:flex sm:mt-8">
-            <div className="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
+            <div className="flex flex-col justify-between mt-8 sm:mt-0 sm:w-full sm:px-8 md:flex-row">
               <div className="flex flex-col">
-                <span className="font-bold uppercase mb-2">
+                <span className="mb-2 font-bold uppercase">
                   Contact
                 </span>
                 <span className="my-2">
                   <Link
                     to="./aboutMe"
-                    className="text-midnight  text-lg hover:text-neutral-500"
+                    className="text-lg text-midnight hover:text-neutral-500"
                   >
                     About Mem tarot
                   </Link>
@@ -24,14 +24,14 @@ function Footer() {
                 <span className="my-2">
                   <Link
                     to="./contact"
-                    className="text-midnight  text-lg hover:text-neutral-500"
+                    className="text-lg text-midnight hover:text-neutral-500"
                   >
                     Contact me
                   </Link>
                 </span>
               </div>
               <div className="flex flex-col">
-                <span className="font-bold uppercase mt-4 md:mt-0 mb-2">
+                <span className="mt-4 mb-2 font-bold uppercase md:mt-0">
                   Social media
                 </span>
                 <span className="my-2">
@@ -49,7 +49,7 @@ function Footer() {
                 </span>
               </div>
               <div className="flex flex-col">
-                <span className="font-bold uppercase mt-4 md:mt-0 mb-2">
+                <span className="mt-4 mb-2 font-bold uppercase md:mt-0">
                   Payments
                 </span>
                 <span className="my-2">
@@ -64,7 +64,7 @@ function Footer() {
                 <span className="my-2">
                   <a
                     href="#"
-                    className="  text-lg hover:text-neutral-500"
+                    className="text-lg hover:text-neutral-500"
                   >
                     Swish
                   </a>

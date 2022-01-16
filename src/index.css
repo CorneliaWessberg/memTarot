@@ -36,6 +36,12 @@ body {
 .header {
   width: 100%;
 }
+
+#navBar {
+  background-color: #a8a29e;;
+
+}
+
 .dropdown {
   position: relative;
   display: inline-block;

@@ -11,23 +11,22 @@ function Header() {
 
   const [jwt, setJwt] = useState("");
 
-
   useEffect(() => {
     const JWT = localStorage.getItem("jwt");
     setJwt(JWT);
   }, []);
 
   function logoutUser() {
-    localStorage.clear() 
+    localStorage.clear();
   }
 
   return (
     <>
-      <div class="header" className="flex w-full mt-6">
-        <div>
+      <div class="header" className="flex flex-col justify-center w-full mt-6 lg:flex-row lg:justify-between ">
+        <div className="flex justify-center lg:ml-12 lg:self-start">
           <Link to="/">
             <img
-              className="rounded self-start ml-12 "
+              className="rounded"
               src={logo}
               width="300"
               height="300"
@@ -37,31 +36,37 @@ function Header() {
           </Link>
         </div>
 
-      <Searchbar />
-        <div className="flex-1  basis-1/4 text-right mt-6">
-          <div class="dropdown">
-            <h1 className="mr-4 text-l hover:underline hover:text-neutral-500">
-            <FaRegUser size={20} /> Login/Account
-            </h1>
-            <div class="dropdown-content">
-              <Link to="./login" id="login">
-                {/*Condioniotal rendering om inloggad eller inte*/}
-                Login/register
-              </Link>
-              <br />
-              <Link to="./profilePage">My account</Link>
-              <br />
-              <a>Logout</a>
+    <div className="flex justify-center mt-6 lg:ml-auto">
+        <Searchbar />
+        </div>
+        <div className="flex justify-center mt-6 mr-10 text-center ">
+          <div className="flex flex-row min-w-max">
+            <FaRegUser size={20} />
+            <div class="dropdown">
+              <h1 className="ml-2 mr-4 text-lg hover:underline hover:text-neutral-500">
+                Login/Account
+              </h1>
+              <div class="dropdown-content">
+                <Link to="./login" id="login">
+                  {/*Condioniotal rendering om inloggad eller inte*/}
+                  Login/register
+                </Link>
+                <br />
+                <Link to="./profilePage">My account</Link>
+                <br />
+                <a>Logout</a>
+              </div>
             </div>
           </div>
-         
-          <Link
-            to="/bookings"
-            className=" mr-32 text-l hover:underline hover:text-neutral-500"
-          >
-          My Bookings
-          </Link>
-         
+          <div className="flex flex-row text-center min-w-max">
+            <FaCalendarWeek size={20} />
+            <Link
+              to="/bookings"
+              className="ml-2 text-lg hover:underline hover:text-neutral-500"
+            >
+              My Bookings
+            </Link>
+          </div>
         </div>
       </div>
     </>
