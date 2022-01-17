@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.jpg";
 import { FaRegUser, FaCalendarWeek } from "react-icons/fa";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import Searchbar from "./searchbar";
 
 function Header() {
@@ -17,7 +18,8 @@ function Header() {
   }, []);
 
   function logoutUser() {
-    localStorage.clear();
+    localStorage.clear()
+    window.location.reload()
   }
 
   return (
@@ -39,32 +41,54 @@ function Header() {
     <div className="flex justify-center mt-6 lg:ml-auto">
         <Searchbar />
         </div>
+       
         <div className="flex justify-center mt-6 mr-10 text-center ">
-          <div className="flex flex-row min-w-max">
+
+      {jwt ?
+        (<div className="flex flex-row min-w-max">
             <FaRegUser size={20} />
             <div class="dropdown">
-              <h1 className="ml-2 mr-4 text-lg hover:underline hover:text-neutral-500">
+              <h1 className="ml-2 mr-4 text-base font-medium lg:text-lg hover:underline hover:text-neutral-500">
+                Logout/Account
+              </h1>
+              <div class="dropdown-content">
+                <Link to="./profilePage">My account</Link>
+                <br />
+                <button onClick={logoutUser} id="logout" className="w-3/4 rounded-md">Logout</button>
+              </div>
+            </div>
+            </div>) :
+
+         ( <div className="flex flex-row min-w-max">
+            <FaRegUser size={20} />
+            <div class="dropdown">
+              <h1 className="ml-2 mr-4 text-base font-medium lg:text-lg hover:underline hover:text-neutral-500 ">
                 Login/Account
               </h1>
               <div class="dropdown-content">
-                <Link to="./login" id="login">
+                <Link to="./login" id="login" className="w-full rounded-md">
                   {/*Condioniotal rendering om inloggad eller inte*/}
                   Login/register
                 </Link>
                 <br />
                 <Link to="./profilePage">My account</Link>
-                <br />
-                <a>Logout</a>
               </div>
             </div>
-          </div>
-          <div className="flex flex-row text-center min-w-max">
+          </div>)}
+
+          <div className="flex flex-row mr-4 text-center min-w-max">
             <FaCalendarWeek size={20} />
             <Link
               to="/bookings"
-              className="ml-2 text-lg hover:underline hover:text-neutral-500"
+              className="ml-2 text-base lg:text-lg hover:underline hover:text-neutral-500 focus:underline"
             >
               My Bookings
+            </Link>
+          </div>
+          <div className="flex flex-row text-center min-w-max">
+            <AiOutlineShoppingCart size={25} />
+            <Link to="/cart" className="ml-2 text-base lg:text-lg hover:underline hover:text-neutral-500 focus:underline">
+              Shoppingcart
             </Link>
           </div>
         </div>

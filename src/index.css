@@ -21,15 +21,15 @@
   /* position: relative; */
 }
 
-#content-inside {
+/* #content-inside {
   width: 80%;
-}
+} */
 
 
 body {
   
   height: auto;
-  font-family: OpenSans;
+  font-family: SourceSansPro;
   color: #57534e;
 }
 
@@ -70,7 +70,7 @@ body {
 
 #login {
   background-color: #a8a29e;
-  padding: 0.5rem;
+  padding: 0.6rem;
   color: white; 
 }
 
@@ -79,9 +79,22 @@ body {
   color: #57534e;
 }
 
+#logout {
+  background-color: #a8a29e;
+  padding: 0.2rem;
+  color: white; 
+}
+
+
+#logout:hover {
+  border-bottom: none;
+  color: #57534e;
+}
+
 .footer {
   position: relative;
   background-color: #a8a29e;
   bottom: 0; 
+  opacity: 0.9;
   width: 100%;
 }

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Footer() {
   return (
     <>
-      <footer className="w-full pt-1 opacity-90 footer ">
+      <footer className="w-full pt-1 footer ">
         <div className="container px-6 mx-auto">
           <div className="sm:flex sm:mt-8">
             <div className="flex flex-col justify-between mt-8 sm:mt-0 sm:w-full sm:px-8 md:flex-row">
@@ -36,7 +36,7 @@ function Footer() {
                 </span>
                 <span className="my-2">
                   <a href="https://www.instagram.com/mem__tarot/" className="text-lg hover:text-neutral-500">
-                    <FontAwesomeIcon icon={["fab", "instagram"]} /> MemTarot
+                    <FontAwesomeIcon icon={["fab", "instagram"]}  className="mr-1"/> MemTarot
                   </a>
                 </span>
                 <span className="my-2">
@@ -44,7 +44,7 @@ function Footer() {
                     href="https://www.youtube.com/results?search_query=mem+tarot"
                     className="text-lg hover:text-neutral-500"
                   >
-                    <FontAwesomeIcon icon={["fab", "youtube"]}  /> MemTarot
+                    <FontAwesomeIcon icon={["fab", "youtube"]}  className="mr-1"/> MemTarot
                   </a>
                 </span>
               </div>
@@ -57,7 +57,7 @@ function Footer() {
                     href="#"
                     className="text-lg hover:text-neutral-500"
                   >
-                    <FontAwesomeIcon icon={["fab", "paypal"]} />
+                    <FontAwesomeIcon icon={["fab", "paypal"]} className="mr-1" />
                     Paypal
                   </a>
                 </span>
@@ -66,6 +66,7 @@ function Footer() {
                     href="#"
                     className="text-lg hover:text-neutral-500"
                   >
+                    <FontAwesomeIcon icon={["fab", "google"]} className="mr-1" />
                     Swish
                   </a>
                 </span>

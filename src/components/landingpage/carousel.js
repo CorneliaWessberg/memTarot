@@ -1,3 +1,4 @@
+{/*
 import React, { useState, useEffect, useRef } from "react";
 import { AiOutlineVerticalRight, AiOutlineVerticalLeft } from "react-icons/ai";
 import pic1 from "../images/pic1.jpg";
@@ -6,7 +7,12 @@ import pic3 from "../images/pic3.jpg";
 import pic4 from "../images/pic4.jpg";
 
 function Carousel() {
-  const featuredProducts = [pic1, pic3, pic2, pic4];
+  const featuredProducts = [ 
+    pic1,
+    pic3,
+    pic2,
+    pic4,
+  ];
 
   let count = 0;
   let slideInterval;
@@ -15,9 +21,7 @@ function Carousel() {
 
   const slideRef = useRef();
 
-  const removeAnimation = () => {
-    slideRef.current.classList.remove("fade-anim");
-  };
+ 
 
   useEffect(() => {
     slideRef.current.addEventListener("animationend", removeAnimation);
@@ -30,6 +34,10 @@ function Carousel() {
     };
     // eslint-disable-next-line
   }, []);
+
+  const removeAnimation = () => {
+    slideRef.current.classList.remove("fade-anim");
+  };
 
   const startSlider = () => {
     slideInterval = setInterval(() => {
@@ -54,20 +62,20 @@ function Carousel() {
   };
 
   return (
-    <div ref={slideRef} className="w-full select-none relative">
+    <div ref={slideRef} className="relative w-full select-none">
       <div className="aspect-w-16 aspect-h-9">
-        <img src={featuredProducts[currentIndex]} alt="" />
+        <img src={featuredProducts[currentIndex]} alt="" className="object-cover w-full h-80" />
       </div>
 
-      <div className="absolute w-full top-1/2 transform -translate-y-1/2 px-3 flex justify-between items-center">
+      <div className="absolute flex items-center justify-between w-full px-3 transform -translate-y-1/2 top-1/2">
         <button
-          className="bg-black text-white p-1 rounded-full bg-opacity-50 cursor-pointer hover:bg-opacity-100 transition"
+          className="p-1 text-white transition bg-black bg-opacity-50 rounded-full cursor-pointer hover:bg-opacity-100"
           onClick={handleOnPrevClick}
         >
           <AiOutlineVerticalRight size={30} />
         </button>
         <button
-          className="bg-black text-white p-1 rounded-full bg-opacity-50 cursor-pointer hover:bg-opacity-100 transition"
+          className="p-1 text-white transition bg-black bg-opacity-50 rounded-full cursor-pointer hover:bg-opacity-100"
           onClick={handleOnNextClick}
         >
           <AiOutlineVerticalLeft size={30} />
@@ -78,3 +86,4 @@ function Carousel() {
 }
 
 export default Carousel;
+*/}

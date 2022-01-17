@@ -5,7 +5,7 @@ function ProfilePage() {
   
   const firstname = localStorage.getItem("firstname");
   const lastname = localStorage.getItem("lastname");
-  const email = localStorage.getItem("email");
+  const email = localStorage.getItem("userEmail");
 
  
 
@@ -18,6 +18,7 @@ function ProfilePage() {
           <h1>Email: {email} </h1>
 
           <h1>Upcoming session: </h1>
+          <h1>My Purchases: </h1>
         </div>
       </div>
     </>

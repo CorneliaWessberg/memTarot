@@ -3,10 +3,10 @@ import React from "react";
 function Youtube() {
   return (
     <>
-      <div className="flex flex-col items-center mt-16">
+      <div className="flex flex-col items-center mt-8">
         <div className="justify-center">
           <h1 className="mb-10 text-xl text-center">Welcome to my youtube channel!</h1>
-          <iframe className="mb-10"
+          <iframe className="w-full mb-10 aspect-video"
             width="680"
             height="400"
             src="https://www.youtube.com/embed/BOAa5MpQAMM"
@@ -15,7 +15,7 @@ function Youtube() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <iframe className="mb-10"
+          <iframe className="w-full mb-10 aspect-video"
             width="680"
             height="400"
             src="https://www.youtube.com/embed/UZf0OrtIlVI"

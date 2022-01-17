@@ -5,14 +5,14 @@ function Dashboard() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     const fetchUsers = async () => {
-      const response = await axios.get(`https://localhost:1337/api/users`);
+      const response = await axios.get(`http://localhost:1337/api/users`);
       console.log(response);
 
-      setUsers(response.data);
+      setUsers(response.data.length)
     };
 
     fetchUsers();
-  }, []);
+  }, [])
   return (
     <>
       <div className="w-full h-screen">
@@ -24,9 +24,9 @@ function Dashboard() {
                   Users on website: {users}
                 </h3>
                 <h3 id="name" className="mb-2 text-xl font-semibold">
-                  Upcoming bookings:
+                  Requested bookings:
                 </h3>
-                <h1>CardList med alla bokade från alla Users</h1>
+                <h1>Purchases on site: </h1>
                 <div className="flex mt-5"></div>
               </div>
             </div>

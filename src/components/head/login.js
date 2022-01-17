@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Register from "./registration";
 import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
@@ -21,7 +20,7 @@ function Login() {
   }
 
   function onSubmit(e) {
-    e.preventDeafult();
+    e.preventDefault();
 
     axios.post("http://localhost:1337/api/auth/local", {
         identifier: logInValues.email,
@@ -35,22 +34,20 @@ function Login() {
         localStorage.setItem("userId", response.data.user.id);
         localStorage.setItem("userEmail", response.data.user.email);
         localStorage.setItem("firstname", response.data.user.firstname);
-        localStorage.setItem("firstname", response.data.user.lastname);
+        localStorage.setItem("lastname", response.data.user.lastname);
         
       })
       .catch((err) => {
         console.log(err);
         setError(
-          "Your informationen doesn't match any user, try again or register if you don't have an account :)"
+          "Your informationen doesn't match any user, try again or register if you don't have an account."
         );
-
-        history("sucess");
       });
   }
 
   return (
     <>
-      <div class="m-auto my-10 bg-white shadow-md lg:w-7/12 mt-36">
+      <div class="m-auto my-10 bg-white shadow-md lg:w-full mt-36">
         <div class="py-8 px-8 rounded-xl">
           <h1 class="font-medium text-2xl mt-3 text-center">Login</h1>
           <h1>{error}</h1>
@@ -81,7 +78,7 @@ function Login() {
           
             </div>
 
-            <button className="block w-1/4 p-3 text-center text-white duration-300 rounded-md bg-stone-400 hover:bg-stone-500">
+            <button type="submit" className="block w-1/4 p-3 text-center text-white duration-300 rounded-md bg-stone-400 hover:bg-stone-500">
               Login
             </button>
           </form>
