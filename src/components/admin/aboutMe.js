@@ -7,15 +7,15 @@ function AboutMe() {
     <div className="flex justify-center mt-10">
       <div className="flex flex-col items-center max-w-4xl">
           <img
-          className="rounded py-2 px-2"
+          className="px-2 py-2 rounded"
           src={logo}
           width="500"
           height="500"
           alt="MemTarot"
           loading="lazy"
         />
-        <h1 className="mb-8 mt-6 font-OpenSans font-bold text-xl">About me - Malin Vallmark/Mem tarot</h1>
-        <p className="font-OpenSans text-lg leading-8">
+        <h1 className="mt-6 mb-8 text-xl font-bold">About me - Malin Vallmark/Mem tarot</h1>
+        <p className="mx-8 text-lg leading-8 text-center lg:mx-0">
           My name is Malin and I am an Intuitive Tarot Card Reader from Sweden.
           I had my awakening in 2019 where I had a re-birth and my spiritual
           gifts came to light. I became more sensitive to energies, my intuition

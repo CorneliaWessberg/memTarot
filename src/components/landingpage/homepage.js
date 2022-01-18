@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios"; 
+import axios from "axios";
 import SessionCard from "../user/sessionCard";
 import Carousel from "./carousel";
-import Card from "../user/sessionCard";
+import ProductCard from "../user/productCard";
 import { Link } from "react-router-dom";
 
 function Homepage() {
-  const username = useState(localStorage.getItem("username"));
+  
 
+  const [products, setProducts] = useState([]);
   const [sessions, setSessions] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const response = await axios.get(
+        "http://localhost:1337/api/items?populate=*&_limit=3`"
+      );
+      setProducts(response.data);
+    };
+    fetchProducts();
+  }, []);
 
   useEffect(() => {
     const fetchSession = async () => {
@@ -27,23 +38,37 @@ function Homepage() {
     <>
       <div>
         <div className="flex flex-col justify-center">
-  
+         <Carousel />
           <div className="flex flex-row flex-wrap justify-around w-screen mt-28">
-          {sessions.map((product) => {
-          return (
-            <SessionCard
-              key={product.id}
-              poductId={product.id}
-              title={product.attributes.Title}
-              description={product.attributes.description}
-              time={product.attributes.time}
-              price={product.attributes.Price}
-              image={product.attributes.img.data.attributes}
-            />
-          );
-        })}
+            {products.map((item) => {
+              return (
+                <ProductCard
+                  key={item.id}
+                  id={item.id}
+                  title={item.title}
+                  description={item.description}
+                  image={item.attributes.img.data.attributes}
+                  price={item.price}
+                />
+              );
+            })}
           </div>
-          <div className="mr-4 font-bold text-right mb-28">
+          <div className="flex flex-row flex-wrap justify-around w-screen mt-28">
+            {sessions.map((product) => {
+              return (
+                <SessionCard
+                  key={product.id}
+                  poductId={product.id}
+                  title={product.attributes.Title}
+                  description={product.attributes.description}
+                  time={product.attributes.time}
+                  price={product.attributes.Price}
+                  image={product.attributes.img.data.attributes}
+                />
+              );
+            })}
+          </div>
+          <div className="mr-6 text-xl font-bold text-right lg:mr-28 mb-28">
             <Link to="./sessions">See all..</Link>
           </div>
 

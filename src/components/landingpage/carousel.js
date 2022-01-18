@@ -1,4 +1,4 @@
-{/*
+
 import React, { useState, useEffect, useRef } from "react";
 import { AiOutlineVerticalRight, AiOutlineVerticalLeft } from "react-icons/ai";
 import pic1 from "../images/pic1.jpg";
@@ -86,4 +86,3 @@ function Carousel() {
 }
 
 export default Carousel;
-*/}

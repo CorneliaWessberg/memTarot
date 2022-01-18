@@ -20,10 +20,10 @@
   margin-bottom: 10rem;
   /* position: relative; */
 }
+ #content-inside {
+  max-width: 100%;
+ }
 
-/* #content-inside {
-  width: 80%;
-} */
 
 
 body {

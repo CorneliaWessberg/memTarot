@@ -9,7 +9,7 @@ function ProductCard({ id, title, description, image, price }) {
         id={id}
       >
         <div className="justify-center px-4 py-4 text-center h-250">
-          <img className="object-cover w-full h-80 rounded-2xl" src={image} />
+          <img className="object-cover w-full h-80 rounded-2xl" src={`http://localhost:1337${image.formats.small.url}`}/>
           <div className="font-bold text-xl mb-2 p-3.5">{title}</div>
 
           <p className="p-2 text-base text-gray-700">{description}</p>

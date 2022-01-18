@@ -29,8 +29,7 @@ function NavigationMenu() {
                 onClick={() => setNavbarOpen(!navbarOpen)}
               >
                 <i>
-                  {" "}
-                  <AiOutlineMenu />{" "}
+                  <AiOutlineMenu />
                 </i>
               </button>
             </div>
@@ -61,7 +60,7 @@ function NavigationMenu() {
                 <li className="nav-item">
                   <Link
                     to="/youtube"
-                    className="mr-8 text-lg hover:underline underline-offset-4 hover:text-neutral-500 focus:underline"
+                    className="mr-6 text-lg hover:underline underline-offset-4 hover:text-neutral-500 focus:underline"
                   >
                     Youtube
                   </Link>
@@ -114,8 +113,7 @@ function NavigationMenu() {
                 onClick={() => setNavbarOpen(!navbarOpen)}
               >
                 <i>
-                  {" "}
-                  <AiOutlineMenu />{" "}
+                  <AiOutlineMenu />
                 </i>
               </button>
             </div>
@@ -154,7 +152,7 @@ function NavigationMenu() {
                 <li className="nav-item">
                   <Link
                     to="/youtube"
-                    className="mr-8 text-lg hover:underline underline-offset-4 hover:text-neutral-500 focus:underline"
+                    className="mr-6 text-lg hover:underline underline-offset-4 hover:text-neutral-500 focus:underline"
                   >
                     Youtube
                   </Link>

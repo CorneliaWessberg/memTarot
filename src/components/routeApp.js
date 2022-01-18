@@ -16,8 +16,6 @@ import Login from "./head/login";
 import Dashboard from "./admin/dashboard";
 import Cart from "./user/cart";
 import Shop from "./user/shop";
-import Carousel from "./landingpage/carousel";
-
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
 
@@ -48,7 +46,6 @@ export default function RouteApp() {
           <Route path="/sessions" element={<SessionList />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/shop" element={<Shop />} />
-          <Route path="/carousell" element={<Carousel />} />
         </Routes>
         </div>
         </div>

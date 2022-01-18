@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
+import axios from "axios";
 
 function SessionCard({ productId, title, description, time, price, image }) {
   const customStyles = {
     content: {
       background: "white",
-      top: "10%",
-      left: "47%",
+      // top: "10%",
+      left: "45%",
       right: "auto",
       bottom: "auto",
-      width: "80%",
-      height: "80vw",
+      width: "50%",
+      height: "auto",
       transform: "translate(-40%, -10%)",
     },
   };
@@ -45,7 +46,38 @@ function SessionCard({ productId, title, description, time, price, image }) {
     console.log(bookValues);
   }
 
-  function onSubmit() {}
+  async function onSubmit(e) {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        `http://localhost:1337/api/bookings?populate=*`,
+        {
+          firstname: bookValues.firstname,
+          lastname: bookValues.lastname,
+          email: bookValues.email,
+          date: Number(bookValues.date),
+          time: Number(bookValues.time),
+          users_permissions_user: userId,
+          title: title,
+          image: image,
+          description: description,
+          price: price,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      setConfirmation(true);
+      console.log(response);
+    } catch (error) {
+      setError("Something went wrong, try again");
+      console.log(error);
+    }
+  }
 
   return (
     <>
@@ -88,7 +120,7 @@ function SessionCard({ productId, title, description, time, price, image }) {
             </strong>
           </div>
         ) : (
-          <div class="bg-white lg:w-5/6 md:6/12 w-10/12 m-auto my-10 shadow-md">
+          <div class="bg-white lg:w-full md:6/12 w-full m-auto my-10 shadow-md justify-center">
             <div class="py-8 px-8 rounded-xl">
               <button onClick={closeModal}>X</button>
               <h1>{error}</h1>
@@ -136,7 +168,7 @@ function SessionCard({ productId, title, description, time, price, image }) {
                 <div class="my-5 text-sm">
                   <label class="block text-black">date:</label>
                   <input
-                    type="number"
+                    type="date"
                     id="date"
                     class="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
                     placeholder="date"
@@ -149,7 +181,7 @@ function SessionCard({ productId, title, description, time, price, image }) {
                 <div class="my-5 text-sm">
                   <label class="block text-black">time:</label>
                   <input
-                    type="number"
+                    type="time"
                     id="time"
                     class="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
                     placeholder="time"

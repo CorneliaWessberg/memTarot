@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
+
 function Login() {
   const initialValues = {
     email: "",
@@ -10,8 +11,8 @@ function Login() {
 
   const [logInValues, setLogInValues] = useState(initialValues);
   const history = useNavigate();
-  const [jwt, setJwt] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   function onChange(e) {
     setLogInValues({ ...logInValues, [e.target.name]: e.target.value });
@@ -22,7 +23,8 @@ function Login() {
   function onSubmit(e) {
     e.preventDefault();
 
-    axios.post("http://localhost:1337/api/auth/local", {
+    axios
+      .post("http://localhost:1337/api/auth/local", {
         identifier: logInValues.email,
         password: logInValues.password,
       })
@@ -35,7 +37,9 @@ function Login() {
         localStorage.setItem("userEmail", response.data.user.email);
         localStorage.setItem("firstname", response.data.user.firstname);
         localStorage.setItem("lastname", response.data.user.lastname);
-        
+
+        navigate("/");
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
@@ -75,23 +79,27 @@ function Login() {
                 className="w-full px-4 py-3 mt-3 bg-gray-100 rounded-md focus:outline-none"
                 placeholder="Password"
               />
-          
             </div>
 
-            <button type="submit" className="block w-1/4 p-3 text-center text-white duration-300 rounded-md bg-stone-400 hover:bg-stone-500">
+            <button
+              type="submit"
+              className="block w-1/4 p-3 text-center text-white duration-300 rounded-md bg-stone-400 hover:bg-stone-500"
+            >
               Login
             </button>
           </form>
 
           <p className="mt-12 font-light text-center text-s text-stone-600">
             Don't have an account?
-            <Link to="/registration" className="ml-2 font-medium text-stone-700 hover:underline hover:text-stone-900">
+            <Link
+              to="/registration"
+              className="ml-2 font-medium text-stone-700 hover:underline hover:text-stone-900"
+            >
               Create One
             </Link>
           </p>
         </div>
       </div>
-      
     </>
   );
 }
