@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import axios from "axios";
 
+//Card for sessions. Showing props on card. 
+//Booking-Modal comes up when clicking on the "request" button. 
+//User can make a requested booking. 
 function SessionCard({ productId, title, description, time, price, image }) {
   const customStyles = {
     content: {
@@ -21,8 +24,8 @@ function SessionCard({ productId, title, description, time, price, image }) {
     firstname: "",
     lastname: "",
     email: "",
-    date: null,
-    time: null,
+    date: "",
+    time: "",
   };
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -52,18 +55,20 @@ function SessionCard({ productId, title, description, time, price, image }) {
     try {
       const response = await axios.post(
         `http://localhost:1337/api/bookings?populate=*`,
-        {
+        {data:{
           firstname: bookValues.firstname,
           lastname: bookValues.lastname,
           email: bookValues.email,
-          date: Number(bookValues.date),
-          time: Number(bookValues.time),
+          date: bookValues.date,
+          time: bookValues.time+":00",
           users_permissions_user: userId,
           title: title,
           image: image,
           description: description,
           price: price,
-        },
+          product: productId
+         
+        }},
         {
           headers: {
             Authorization: `Bearer ${token}`,

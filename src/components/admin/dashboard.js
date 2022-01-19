@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios"; 
 
+//component for admin dashboard. Here we fetching users 
+//and bookings so the owner can see how many users and bookings on the page.
 function Dashboard() {
   const [users, setUsers] = useState([]);
   useEffect(() => {

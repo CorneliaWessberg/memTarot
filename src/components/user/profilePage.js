@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+//ProfilPage, showing information about the user that is logged in. 
 function ProfilePage() {
   
   const firstname = localStorage.getItem("firstname");

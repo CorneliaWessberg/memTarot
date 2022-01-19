@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios"; 
+import axios from "axios";
 import BookingCard from "./bookingCard";
 
+//Mapping thru all the bookingcards, will show the bookingcards that belongs to the userId.
 function Bookings() {
   const user = localStorage.getItem("firstname");
   const [bookings, setBookings] = useState([]);
@@ -13,7 +14,7 @@ function Bookings() {
 
     const fetchData = async () => {
       const response = await axios.get(
-        `http://http://localhost:1337/api/bookings?populate=*&users_permissions_user.id=${userId}`,
+        `http://localhost:1337/api/bookings?users_permissions_user.id=${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -28,7 +29,6 @@ function Bookings() {
     fetchData();
   }, [token, bookings, userId]);
 
-  
   return (
     <>
       <div className="flex flex-col items-center">
@@ -39,11 +39,20 @@ function Bookings() {
             2-days if its accepted.
           </h1>
           <div>
-          {bookings.map((booking) => {
-                    return (
-                        <BookingCard key={booking.id} bookingId={booking.id} firstname={booking.firstname} lastname={booking.lastname} bookedSession={booking.title} image={booking.image} description={booking.description} price={booking.price} />
-                    )
-                })}
+            {bookings.map((booking) => {
+              return (
+                <BookingCard
+                  key={booking.id}
+                  bookingId={booking.id}
+                  firstname={booking.attributes.firstname}
+                  lastname={booking.attributes.lastname}
+                  bookedSession={booking.attributes.title}
+                  bookedImage={booking.attributes.img.data.attributes}
+                  bookedDescription={booking.attributes.description}
+                  bookedPrice={booking.attributes.price}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

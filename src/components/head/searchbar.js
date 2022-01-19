@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 
+//searchbar component showing in header section. Not done. 
 function Searchbar() {
   const [searchInput, setSearchInput] = useState("");
   return (

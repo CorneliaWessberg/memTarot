@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SessionCard from "./sessionCard";
+import { FaMagic } from "react-icons/fa";
 
+//Mapping thru all session cards. 
 function SessionList() {
   const [sessions, setSessions] = useState([]);
 
@@ -12,14 +14,13 @@ function SessionList() {
       );
       console.log(response.data);
       setSessions(response.data.data);
-      console.log(JSON.stringify(response.data.data));
     };
 
     fetchSession();
   }, []);
   return (
     <>
-      <h1 className="text-center">My sessions</h1>
+      <h1 className="flex flex-row justify-center mb-10 text-xl font-bold text-center">Make a request on my sessions here <i className="ml-2"><FaMagic size={30}/></i> </h1>
       <div className="flex flex-row flex-wrap justify-around w-screen">
         {sessions.map((product) => {
           return (

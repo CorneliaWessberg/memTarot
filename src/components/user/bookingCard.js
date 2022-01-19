@@ -1,10 +1,14 @@
 import React from "react";
 import axios from "axios"; 
 
-function BookingCard({ bookingId, bookedSession, image, description, price }) {
+//Card for the bookings that will show on "my bookings" page. 
+//Taking props from sessions, and transfer into bookingcard.
+//function for canceling your booking.
+function BookingCard({ bookingId, bookedSession, bookedImage, bookedDescription, bookedPrice }) {
   function cancelBooking() {
+      
     axios.delete(
-      `http://http://localhost:1337/api/bookings?populate=*${bookingId}`
+      `http://localhost:1337/api/bookings${bookingId}`
     );
     window.location.reload();
   }
@@ -18,10 +22,10 @@ function BookingCard({ bookingId, bookedSession, image, description, price }) {
           <div className="font-bold text-xl mb-2 p-3.5">{bookedSession}</div>
           <img
             className="object-cover w-full h-40 rounded-2xl"
-            src={`http://localhost:1337${image.formats.small.url}`}
+            src={`http://localhost:1337${bookedImage.formats.small.url}`}
           />
-          <p className="p-2 text-base text-gray-700">{description}</p>
-          <p className="p-2 text-base text-gray-700">{price}</p>
+          <p className="p-2 text-base text-gray-700">{bookedDescription}</p>
+          <p className="p-2 text-base text-gray-700">{bookedPrice}</p>
           <div className="px-6 pt-4 pb-2">
             <button
               onClick={cancelBooking}

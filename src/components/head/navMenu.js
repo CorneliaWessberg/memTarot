@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { AiOutlineMenu } from "react-icons/ai";
 
+//navMenu, dropdown in mobile version. Showing all on desktop. 
+//Conditional rendering if admin or not. 
 function NavigationMenu() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const isAdmin = localStorage.getItem("role");

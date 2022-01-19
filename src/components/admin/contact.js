@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import emailjs, { sendForm } from "@emailjs/browser";
 
+
+//contact form with email.js implementation.
 function Contact() {
   const [confirmation, setConfirmation] = useState("");
 

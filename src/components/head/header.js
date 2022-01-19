@@ -5,10 +5,12 @@ import { FaRegUser, FaCalendarWeek } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Searchbar from "./searchbar";
 
+//Header component, showing on all sides. 
+//Top-menu with dropdown login/logout functions. Conditional rendering with jwt.
+//directing to shopping-cart and my bookings.
+//Showing menu different on desktop and mobile.
 function Header() {
-  //Header med logo + Login/my account button links
-
-  //function för att logga in användare, kollar jwt och renderar beroende på inloggad eller utloggad
+  
 
   const [jwt, setJwt] = useState("");
 

@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { FaMagic } from "react-icons/fa";
 
+
+//Register component, store users information in database. 
+//Logged in after registration. 
 function Register() {
   const initialValues = {
     firstname: "",

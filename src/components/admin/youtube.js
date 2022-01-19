@@ -1,6 +1,7 @@
 import React from "react";
 import { FaMagic } from "react-icons/fa";
 
+//component for showing the owners youtube channel.
 function Youtube() {
   return (
     <>

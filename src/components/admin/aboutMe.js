@@ -1,10 +1,12 @@
 import React from "react";
 import logo from "../images/logo.jpg";
 
+//component for information about the company/the owner.
+
 function AboutMe() {
   return (
     <>
-    <div className="flex justify-center mt-10">
+    <div className="flex justify-center">
       <div className="flex flex-col items-center max-w-4xl">
           <img
           className="px-2 py-2 rounded"

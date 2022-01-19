@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
-
+//login component, check email and password. Redirecting to home page when succesfull login.
 function Login() {
   const initialValues = {
     email: "",
