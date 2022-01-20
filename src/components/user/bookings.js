@@ -14,7 +14,7 @@ function Bookings() {
 
     const fetchData = async () => {
       const response = await axios.get(
-        `http://localhost:1337/api/bookings?users_permissions_user.id=${userId}`,
+        `http://localhost:1337/api/bookings?populate=users_permissions_user.id=${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -42,14 +42,14 @@ function Bookings() {
             {bookings.map((booking) => {
               return (
                 <BookingCard
-                  key={booking.id}
+                  key={booking.data.id}
                   bookingId={booking.id}
                   firstname={booking.attributes.firstname}
                   lastname={booking.attributes.lastname}
-                  bookedSession={booking.attributes.title}
+                  bookedSession={booking.attributes.Title}
                   bookedImage={booking.attributes.img.data.attributes}
                   bookedDescription={booking.attributes.description}
-                  bookedPrice={booking.attributes.price}
+                  bookedPrice={booking.attributes.Price}
                 />
               );
             })}

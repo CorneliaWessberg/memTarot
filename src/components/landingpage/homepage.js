@@ -44,7 +44,6 @@ function Homepage() {
     <>
       <div>
         <div className="flex flex-col justify-center">
-         <Carousel />
           <div className="flex flex-row flex-wrap justify-around w-screen mt-28">
             {products.map((item) => {
               return (

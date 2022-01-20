@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { CartProvider,useCart } from "react-use-cart";
 
 //Card for the products. Props showing on the cards. 
 //When clicking add to cart. Item sends to shoppingcart.
-function ProductCard({ id, title, description, image, price, item }) {
-  const product = item;
-  const [cart, setCart] = useState([]);
-
-  const addProduct = (product) => {
-    setCart([...cart, product]);
-  };
-
+function ProductCard({ id, title, description, image, price }) {
+  const item = {id, title, image, description, price}
+  const { addItem } = useCart();
   return (
     <>
       <div
@@ -28,15 +24,16 @@ function ProductCard({ id, title, description, image, price, item }) {
 
           <p className="p-2 text-base text-gray-700">{price} kr</p>
           <div className="px-6 pt-4 pb-2">
-            <button
-              onClick={() => addProduct(product)}
-              className="flex flex-row justify-center w-full p-3 text-white duration-300 rounded-md bg-stone-400 hover:bg-stone-500"
-            >
-              <i>
-                <AiOutlineShoppingCart size={20} className="mt-0.5 mr-2" />
-              </i>
-              Add to cart
-            </button>
+          <button
+                onClick={() => addItem(item)}
+                className="flex flex-row justify-center w-full p-3 text-white duration-300 rounded-md bg-stone-400 hover:bg-stone-500"
+              >
+                <i>
+                  <AiOutlineShoppingCart size={20} className="mt-0.5 mr-2" />
+                </i>
+                Add to cart
+              </button>
+            
           </div>
         </div>
       </div>

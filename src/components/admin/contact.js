@@ -30,9 +30,9 @@ function Contact() {
   return (
     <>
       <div className="flex flex-col items-center">
-        <h1 className="mb-6 text-2xl">How can I help you?</h1>
-        <p className="mb-10 text-lg">
-          Any questions or thoughts contact me here, I try to answer as quickly
+        <h1 className="mb-6 text-2xl font-bold">How can I help you?</h1>
+        <p className="mb-10 text-lg text-center">
+          Any questions or thoughts contact me here,<br/> I try to answer as quickly
           as possible!
         </p>
         <form onSubmit={sendEmail} className="w-full max-w-lg">

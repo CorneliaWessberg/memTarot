@@ -5,7 +5,6 @@ import Homepage from "./landingpage/homepage";
 import Footer from "./landingpage/footer";
 import AboutMe from "./admin/aboutMe";
 import Contact from "./admin/contact";
-import Calender from "./user/calender";
 import Youtube from "./admin/youtube";
 import SessionList from "./user/sessions";
 import AddSession from "./admin/addSession";
@@ -32,10 +31,9 @@ export default function RouteApp() {
         <div id="content">
         <div id="content-inside">
         <Routes>
-          <Route path="/" element={ <Homepage /> } />
+          <Route path="/" exact element={ <Homepage /> } />
           <Route path="/aboutMe" element={ <AboutMe /> } />
           <Route path="/contact" element={ <Contact />} />
-          <Route path="/calender" element={ <Calender />} />
           <Route path="/youtube" element={ <Youtube />} />
           <Route path="/addSession" element={ <AddSession />} />
           <Route path="/registration" element={ <Register />} />

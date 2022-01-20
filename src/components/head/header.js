@@ -4,6 +4,7 @@ import logo from "../images/logo.jpg";
 import { FaRegUser, FaCalendarWeek } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Searchbar from "./searchbar";
+import { useCart } from "react-use-cart";
 
 //Header component, showing on all sides. 
 //Top-menu with dropdown login/logout functions. Conditional rendering with jwt.
@@ -11,6 +12,7 @@ import Searchbar from "./searchbar";
 //Showing menu different on desktop and mobile.
 function Header() {
   
+  const { totalItems } = useCart();
 
   const [jwt, setJwt] = useState("");
 
@@ -90,7 +92,7 @@ function Header() {
           <div className="flex flex-row text-center min-w-max">
             <AiOutlineShoppingCart size={25} />
             <Link to="/cart" className="ml-2 text-base lg:text-lg hover:underline hover:text-neutral-500 focus:underline">
-              Shoppingcart
+              Shoppingcart ({ totalItems })
             </Link>
           </div>
         </div>

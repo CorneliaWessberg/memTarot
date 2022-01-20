@@ -3,7 +3,7 @@ import axios from "axios";
 import SessionCard from "./sessionCard";
 import { FaMagic } from "react-icons/fa";
 
-//Mapping thru all session cards. 
+//Mapping thru all session cards.
 function SessionList() {
   const [sessions, setSessions] = useState([]);
 
@@ -32,6 +32,7 @@ function SessionList() {
               time={product.attributes.time}
               price={product.attributes.Price}
               image={product.attributes.img.data.attributes}
+              // products={product.attributes.booking.data}
             />
           );
         })}

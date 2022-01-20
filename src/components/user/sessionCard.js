@@ -6,7 +6,7 @@ import axios from "axios";
 //Card for sessions. Showing props on card. 
 //Booking-Modal comes up when clicking on the "request" button. 
 //User can make a requested booking. 
-function SessionCard({ productId, title, description, time, price, image }) {
+function SessionCard({ productId,  title, description, time, price, image }) {
   const customStyles = {
     content: {
       background: "white",
@@ -66,7 +66,6 @@ function SessionCard({ productId, title, description, time, price, image }) {
           image: image,
           description: description,
           price: price,
-          product: productId
          
         }},
         {
