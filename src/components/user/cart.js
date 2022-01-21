@@ -19,7 +19,7 @@ function Cart() {
     removeItem,
     emptyCart,
   } = useCart();
-
+  
   const user = localStorage.getItem("firstname");
 
   if (isEmpty)

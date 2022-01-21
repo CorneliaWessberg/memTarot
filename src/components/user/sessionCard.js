@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import axios from "axios";
 
-//Card for sessions. Showing props on card. 
-//Booking-Modal comes up when clicking on the "request" button. 
-//User can make a requested booking. 
-function SessionCard({ id,  title, description, time, price, image }) {
+//Card for sessions. Showing props on card.
+//Booking-Modal comes up when clicking on the "request" button.
+//User can make a requested booking.
+function SessionCard({ id, title, description, time, price, image }) {
   const customStyles = {
     content: {
       background: "white",
@@ -49,29 +49,26 @@ function SessionCard({ id,  title, description, time, price, image }) {
     console.log(bookValues);
   }
 
- 
-
   async function onSubmit(e) {
     e.preventDefault();
-    
+
     try {
       const response = await axios.post(
         `http://localhost:1337/api/bookings`,
-        {data:{
-          firstname: bookValues.firstname,
-          lastname: bookValues.lastname,
-          email: bookValues.email,
-          date: bookValues.date,
-          time: Number(bookValues.time),
-          users_permissions_user: userId,
-          products: id,
-          title: title,
-          price: price, 
-          description: description,
-
-
-          
-        }},
+        {
+          data: {
+            firstname: bookValues.firstname,
+            lastname: bookValues.lastname,
+            email: bookValues.email,
+            date: bookValues.date,
+            time: Number(bookValues.time),
+            users_permissions_user: userId,
+            products: id,
+            title: title,
+            price: price,
+            description: description,
+          },
+        },
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -201,9 +198,16 @@ function SessionCard({ id,  title, description, time, price, image }) {
                   <div class="flex justify-end mt-2 text-xs text-gray-600"></div>
                 </div>
 
-                <button class="block text-center text-white bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full">
-                  Confirm
-                </button>
+                {token ? (
+                  <button class="block text-center text-white bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full">
+                    Confirm
+                  </button>
+                ) : (
+                  <h1>
+                    You have to be logged in to make a booking!{" "}
+                    <Link to="/login">- To login</Link>
+                  </h1>
+                )}
               </form>
             </div>
           </div>

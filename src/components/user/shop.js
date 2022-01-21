@@ -1,28 +1,36 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProductCard from "./productCard";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { CartProvider, useCart } from "react-use-cart";
 
 //Product page, mapping thru all products.
 function Shop() {
-
   const [products, setProducts] = useState([]);
+  const [limitPage, setLimitPage] = useState(6);
 
   useEffect(() => {
     const fetchProduct = async () => {
       const response = await axios.get(
-        `http://localhost:1337/api/items?populate=*`
+        `http://localhost:1337/api/items?populate=*&_limit=${limitPage}`
       );
       console.log(response.data);
       setProducts(response.data.data);
     };
     fetchProduct();
-  }, []);
+  }, [limitPage]);
+
+  function loadMore() {
+    let dynamic = limitPage + 3;
+    setLimitPage(dynamic);
+  }
+
+  function loadLess() {
+    let dynamic = limitPage - 3;
+    setLimitPage(dynamic);
+  }
 
   return (
     <>
-      <div className="flex flex-row flex-wrap items-center justify-around w-screen">
+      <div className="flex flex-row flex-wrap items-center justify-around max-w-screen">
         {products.map((item) => {
           return (
             <div>
@@ -38,6 +46,21 @@ function Shop() {
           );
         })}
       </div>
+      {limitPage >= products.length ? (
+        <button
+          class="flex m-2 justify-center text-gray-800 px-4 py-3 bg-gray-300 rounded hover:bg-gray-800 hover:text-white transition duration-200"
+          onClick={loadMore}
+        >
+          Show more
+        </button>
+      ) : (
+        <button
+          class="flex m-2 justify-center text-gray-800 px-4 py-3 bg-gray-300 rounded hover:bg-gray-800 hover:text-white transition duration-200"
+          onClick={loadLess}
+        >
+          Show less
+        </button>
+      )}
     </>
   );
 }
