@@ -6,7 +6,7 @@ import axios from "axios";
 //Card for sessions. Showing props on card. 
 //Booking-Modal comes up when clicking on the "request" button. 
 //User can make a requested booking. 
-function SessionCard({ productId,  title, description, time, price, image }) {
+function SessionCard({ id,  title, description, time, price, image }) {
   const customStyles = {
     content: {
       background: "white",
@@ -25,7 +25,7 @@ function SessionCard({ productId,  title, description, time, price, image }) {
     lastname: "",
     email: "",
     date: "",
-    time: "",
+    time: Number,
   };
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -49,24 +49,28 @@ function SessionCard({ productId,  title, description, time, price, image }) {
     console.log(bookValues);
   }
 
+ 
+
   async function onSubmit(e) {
     e.preventDefault();
-
+    
     try {
       const response = await axios.post(
-        `http://localhost:1337/api/bookings?populate=*`,
+        `http://localhost:1337/api/bookings`,
         {data:{
           firstname: bookValues.firstname,
           lastname: bookValues.lastname,
           email: bookValues.email,
           date: bookValues.date,
-          time: bookValues.time+":00",
+          time: Number(bookValues.time),
           users_permissions_user: userId,
+          products: id,
           title: title,
-          image: image,
+          price: price, 
           description: description,
-          price: price,
-         
+
+
+          
         }},
         {
           headers: {
@@ -77,6 +81,7 @@ function SessionCard({ productId,  title, description, time, price, image }) {
 
       setConfirmation(true);
       console.log(response);
+      console.log(JSON.stringify(response, null, 2));
     } catch (error) {
       setError("Something went wrong, try again");
       console.log(error);
@@ -87,7 +92,7 @@ function SessionCard({ productId,  title, description, time, price, image }) {
     <>
       <div
         className="flex justify-center p-5 my-4 overflow-hidden italic rounded-md shadow-lg w-96 max-h-150"
-        id={productId}
+        id={id}
       >
         <div className="justify-center px-4 py-4 text-center">
           <div className="font-bold text-xl mb-2 p-3.5">{title}</div>
@@ -185,7 +190,7 @@ function SessionCard({ productId,  title, description, time, price, image }) {
                 <div class="my-5 text-sm">
                   <label class="block text-black">time:</label>
                   <input
-                    type="time"
+                    type="number"
                     id="time"
                     class="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
                     placeholder="time"

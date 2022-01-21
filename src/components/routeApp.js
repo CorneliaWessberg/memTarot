@@ -15,11 +15,8 @@ import Login from "./head/login";
 import Dashboard from "./admin/dashboard";
 import Cart from "./user/cart";
 import Shop from "./user/shop";
+import Checkout from "./user/checkout";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
-
-
-
-
 
 export default function RouteApp() {
   return (
@@ -29,23 +26,24 @@ export default function RouteApp() {
         <NavigationMenu />
 
         <div id="content">
-        <div id="content-inside">
-        <Routes>
-          <Route path="/" exact element={ <Homepage /> } />
-          <Route path="/aboutMe" element={ <AboutMe /> } />
-          <Route path="/contact" element={ <Contact />} />
-          <Route path="/youtube" element={ <Youtube />} />
-          <Route path="/addSession" element={ <AddSession />} />
-          <Route path="/registration" element={ <Register />} />
-          <Route path="/profilePage" element={ <ProfilePage />} />
-          <Route path="/bookings" element={ <Bookings />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/sessions" element={<SessionList />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/shop" element={<Shop />} />
-        </Routes>
-        </div>
+          <div id="content-inside">
+            <Routes>
+              <Route path="/" exact element={<Homepage />} />
+              <Route path="/aboutMe" element={<AboutMe />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/youtube" element={<Youtube />} />
+              <Route path="/addSession" element={<AddSession />} />
+              <Route path="/registration" element={<Register />} />
+              <Route path="/profilePage" element={<ProfilePage />} />
+              <Route path="/bookings" element={<Bookings />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/sessions" element={<SessionList />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Routes>
+          </div>
         </div>
 
         <Footer />

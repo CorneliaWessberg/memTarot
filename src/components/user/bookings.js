@@ -3,7 +3,7 @@ import axios from "axios";
 import BookingCard from "./bookingCard";
 
 //Mapping thru all the bookingcards, will show the bookingcards that belongs to the userId.
-function Bookings() {
+function Bookings(title, description, price) {
   const user = localStorage.getItem("firstname");
   const [bookings, setBookings] = useState([]);
   const userId = useState(localStorage.getItem("userId"));
@@ -14,7 +14,9 @@ function Bookings() {
 
     const fetchData = async () => {
       const response = await axios.get(
-        `http://localhost:1337/api/bookings?populate=users_permissions_user.id=${userId}`,
+        // `http://localhost:1337/api/bookings?populate=*`,
+        //  `http://localhost:1337/api/bookings?populate[0]=users_permissions_user.id=${userId}&populate[1]=products&populate[2]=products.title*`,
+        `http://localhost:1337/api/bookings?populate=users_permissions_user.id=${userId},products`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -22,9 +24,10 @@ function Bookings() {
         }
       );
 
+      console.log(JSON.stringify(response, null, 2));
       setBookings(response.data.data);
     };
-    console.log(bookings);
+   
 
     fetchData();
   }, [token, bookings, userId]);
@@ -41,16 +44,26 @@ function Bookings() {
           <div>
             {bookings.map((booking) => {
               return (
+                <>
                 <BookingCard
-                  key={booking.data.id}
+                  key={booking.id}
                   bookingId={booking.id}
                   firstname={booking.attributes.firstname}
+                  bookedTime={booking.attributes.time}
                   lastname={booking.attributes.lastname}
-                  bookedSession={booking.attributes.Title}
-                  bookedImage={booking.attributes.img.data.attributes}
-                  bookedDescription={booking.attributes.description}
-                  bookedPrice={booking.attributes.Price}
-                />
+                /><div>
+                  {booking.attributes.products.data.map((product) => (
+                    <>
+                  bookedSession {product.attributes.Title}
+                  bookedDescription={product.attributes.description}
+                  bookedPrice={product.attributes.Price} kr
+                    <h1></h1>
+                    <h1></h1>
+                    <h1></h1>
+                    
+                    </> 
+                    ))}
+                  </div></>
               );
             })}
           </div>

@@ -4,7 +4,7 @@ import axios from "axios";
 //Card for the bookings that will show on "my bookings" page. 
 //Taking props from sessions, and transfer into bookingcard.
 //function for canceling your booking.
-function BookingCard({ bookingId, bookedSession, bookedImage, bookedDescription, bookedPrice }) {
+function BookingCard({ bookingId, firstname, bookedTime, date, bookedSession, bookedImage, bookedDescription, bookedPrice }) {
   function cancelBooking() {
       
     axios.delete(
@@ -19,13 +19,13 @@ function BookingCard({ bookingId, bookedSession, bookedImage, bookedDescription,
         id={bookingId}
       >
         <div className="justify-center px-4 py-4 text-center">
-          <div className="font-bold text-xl mb-2 p-3.5">{bookedSession}</div>
-          <img
+          <div className="font-bold text-xl mb-2 p-3.5"></div>
+          {/* <img
             className="object-cover w-full h-40 rounded-2xl"
             src={`http://localhost:1337${bookedImage.formats.small.url}`}
-          />
-          <p className="p-2 text-base text-gray-700">{bookedDescription}</p>
-          <p className="p-2 text-base text-gray-700">{bookedPrice}</p>
+          /> */}
+          <p className="p-2 text-base text-gray-700">{bookedSession}</p>
+          <p className="p-2 text-base text-gray-700">{date}</p>
           <div className="px-6 pt-4 pb-2">
             <button
               onClick={cancelBooking}

@@ -26,7 +26,7 @@ function SessionList() {
           return (
             <SessionCard
               key={product.id}
-              poductId={product.id}
+              id={product.id}
               title={product.attributes.Title}
               description={product.attributes.description}
               time={product.attributes.time}
