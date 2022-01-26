@@ -35,7 +35,7 @@ function SessionCard({ id, title, description, time, price, image }) {
   const token = localStorage.getItem("jwt");
   const userId = localStorage.getItem("userId");
   const user = localStorage.getItem("firstname");
-  const lastname = localStorage.getItem("lastname")
+  const lastname = localStorage.getItem("lastname");
 
   function openModal(e) {
     setModalOpen(true);
@@ -77,7 +77,7 @@ function SessionCard({ id, title, description, time, price, image }) {
           },
         }
       );
-      
+
       setConfirmation(true);
       console.log(response);
       console.log(JSON.stringify(response, null, 2));
@@ -90,22 +90,22 @@ function SessionCard({ id, title, description, time, price, image }) {
   return (
     <>
       <div
-        className="flex justify-center p-5 my-4 overflow-hidden rounded-sm shadow-lg w-96 max-h-150"
+        className="flex flex-col justify-center h-auto p-5 mx-10 my-4 mb-16 rounded-sm shadow-lg sm:w-1/2 lg:flex-row lg:w-5/12"
         id={id}
       >
+        <img
+          className="flex items-center justify-center object-cover w-full h-full lg:w-2/4"
+          src={`http://localhost:1337${image.formats.small.url}`}
+        />
+
         <div className="justify-center px-4 py-4 text-center">
           <div className="font-bold text-xl mb-2 p-3.5">{title}</div>
-          <img
-            className="object-cover w-full h-40 rounded-md"
-            src={`http://localhost:1337${image.formats.small.url}`}
-          />
           <p className="p-2 text-base text-gray-700">{description}</p>
-          <p className="p-2 text-base text-gray-700">{time}</p>
-          <p className="p-2 text-base text-gray-700">{price} kr</p>
-          <div className="px-6 pt-4 pb-2">
+          <p className="p-2 text-lg text-gray-700">{price};- kr</p>
+          <div className="flex items-center px-6 pt-4 pb-2">
             <button
               onClick={openModal}
-              className="flex content-center justify-center w-3/4 p-2 text-center text-white duration-300 rounded-sm bg-stone-400 hover:bg-stone-500"
+              className="flex items-center justify-center w-full p-2 text-lg text-center text-white duration-300 rounded-sm bg-stone-400 hover:bg-stone-500"
             >
               Make a request
             </button>

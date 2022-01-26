@@ -13,14 +13,14 @@ function NavigationMenu() {
     <>
       {isAdmin === "admin" ? (
         <nav
-          className="relative flex flex-wrap items-center justify-between py-5 mt-8 mb-16 font-bold text-white opacity-50"
+          className="relative flex flex-wrap items-center justify-between py-5 mt-8 mb-12 font-bold text-white opacity-50"
           id="navBar"
         >
           <div className="flex flex-wrap items-center justify-center w-full ml-8 mr-8">
             <div className="relative flex justify-between w-full lg:w-auto lg:static lg:block lg:justify-start">
               <Link
                 to="/"
-                className="flex flex-row justify-start text-lg hover:underline underline-offset-4 hover:text-neutral-500 focus:underline"
+                className="flex flex-row justify-start text-xl hover:underline underline-offset-4 hover:text-neutral-500 focus:underline"
               >
                 <FaHome size={20} className="mt-1 mr-2" /> Home
               </Link>
@@ -96,7 +96,7 @@ function NavigationMenu() {
             <div className="relative flex justify-between w-full lg:w-auto lg:static lg:block lg:justify-start">
               <Link
                 to="/"
-                className="flex flex-row justify-start text-lg hover:underline underline-offset-4 hover:text-neutral-500 focus:underline"
+                className="flex flex-row justify-start text-xl hover:underline underline-offset-4 hover:text-neutral-500 focus:underline"
               >
                 <FaHome size={20} className="mt-1 mr-2" /> Home
               </Link>

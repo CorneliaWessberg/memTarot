@@ -110,7 +110,6 @@ function Register() {
                   placeholder="Password"
                   value={regValues.password}
                   name="password"
-                  onChange={onChange}
                 />
                 <div className="flex justify-end mt-2 text-xs text-gray-600"></div>
               </div>

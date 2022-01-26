@@ -45,7 +45,7 @@ function Homepage() {
       <div className="w-screen -ml-4">
         <div className="flex flex-col justify-center">
           {/* <Carousel /> */}
-          <div className="flex flex-row flex-wrap justify-around mt-28">
+          <div className="flex flex-row flex-wrap justify-around mx-10 mr-2 mt-28">
             {products.map((item) => {
               return (
                 <ProductCard
@@ -53,16 +53,16 @@ function Homepage() {
                   id={item.id}
                   title={item.attributes.title}
                   description={item.attributes.description}
-                  image={item.attributes.img.data.attributes}
+                  image={item.attributes.img.data.attributes.formats.small.url}
                   price={item.attributes.price}
                 />
               );
             })}
           </div>
-          <div className="mt-6 mr-6 text-xl font-bold text-right lg:mr-28 mb-28">
+          <div className="mr-6 -mt-2 text-xl font-bold text-right lg:mr-28 mb-28">
             <Link to="./shop">See all..</Link>
           </div>
-          <div className="flex flex-row flex-wrap justify-around mt-28">
+          <div className="flex flex-row flex-wrap justify-around mt-10 ml-2">
             {sessions.map((product) => {
               return (
                 <SessionCard
@@ -81,15 +81,12 @@ function Homepage() {
             <Link to="./sessions">See all..</Link>
           </div>
 
-          {/*Product cards,
-        2-cards with 2 of the sessions. 
-        Link besides "show more", links to My session side
-        */}
 
           {/*instagram feed*/}
           <div
             loading="lazy"
             data-mc-src="30c2d221-dbb4-4808-beec-c63a46ebddfa#instagram"
+            className="ml-10 mr-6"
           ></div>
         </div>
       </div>

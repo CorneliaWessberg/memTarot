@@ -53,7 +53,9 @@ function Login() {
     <>
       <div class="m-auto my-10 bg-white shadow-md lg:w-full mt-36">
         <div class="py-10 px-20 rounded-xl">
-          <h1 class="font-medium text-2xl mt-3 text-center min-w-full">Login</h1>
+          <h1 class="font-medium text-2xl mt-3 text-center min-w-full">
+            Login
+          </h1>
           <h1>{error}</h1>
           <form class="mt-6" onSubmit={onSubmit} method="POST">
             <div class="my-5 text-sm">
@@ -99,10 +101,7 @@ function Login() {
             </Link>
           </p>
         </div>
-  </div>
-  
- 
-
+      </div>
     </>
   );
 }

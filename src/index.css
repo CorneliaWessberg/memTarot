@@ -13,10 +13,10 @@
 } 
 
 #content {
-  /* width: 100%; */
+  width: 100%; 
   display: flex;
   justify-content: center;
-  min-height: 130vh;
+  min-height: 90vh; 
   margin-bottom: 10rem;
   /* position: relative; */
 }
@@ -28,7 +28,7 @@
 body {
   
   height: auto;
-  font-family: SourceSansPro;
+  font-family: proxima-nova-sans-serif;
   color: #57534e;
 }
 

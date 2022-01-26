@@ -6,7 +6,7 @@ import logo from "../images/logo.jpg";
 function AboutMe() {
   return (
     <>
-    <div className="flex justify-center">
+    <div className="flex justify-center mb-32">
       <div className="flex flex-col items-center max-w-4xl">
           <img
           className="px-2 py-2 rounded"
@@ -16,8 +16,8 @@ function AboutMe() {
           alt="MemTarot"
           loading="lazy"
         />
-        <h1 className="mt-6 mb-8 text-xl font-bold">About me - Malin Vallmark/Mem tarot</h1>
-        <p className="mx-8 text-lg leading-8 text-center lg:mx-0">
+        <h1 className="mt-6 mb-8 text-2xl font-bold">About me - Malin Vallmark/Mem tarot</h1>
+        <p className="mx-8 text-xl leading-8 text-center lg:mx-0">
           My name is Malin and I am an Intuitive Tarot Card Reader from Sweden.
           I had my awakening in 2019 where I had a re-birth and my spiritual
           gifts came to light. I became more sensitive to energies, my intuition

@@ -7,7 +7,6 @@ import AboutMe from "./admin/aboutMe";
 import Contact from "./admin/contact";
 import Youtube from "./admin/youtube";
 import SessionList from "./user/sessions";
-import AddSession from "./admin/addSession";
 import Register from "./head/registration";
 import ProfilePage from "./user/profilePage";
 import Bookings from "./user/bookings";
@@ -30,12 +29,11 @@ export default function RouteApp() {
           <div id="content-inside">
             <Routes>
               <Route path="/" exact element={<Homepage />} />
-              <Route path="/aboutMe" element={<AboutMe />} />
+              <Route path="/aboutme" element={<AboutMe />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/youtube" element={<Youtube />} />
-              <Route path="/addSession" element={<AddSession />} />
               <Route path="/registration" element={<Register />} />
-              <Route path="/profilePage" element={<ProfilePage />} />
+              <Route path="/profilepage" element={<ProfilePage />} />
               <Route path="/bookings" element={<Bookings />} />
               <Route path="/login" element={<Login />} />
               <Route path="/dashboard" element={<Dashboard />} />

@@ -15,11 +15,6 @@ function Bookings() {
 
     const fetchData = async () => {
       const response = await axios.get(
-        // `http://localhost:1337/api/bookings?populate=*`,
-        //  `http://localhost:1337/api/bookings?populate[0]=users_permissions_user.id=${userId}&populate[1]=products&populate[2]=products.title*`,
-        //  `http://localhost:1337/api/bookings?populate=user.data.attributes.firstname=${user},products`,
-        //  `http://localhost:1337/api/bookings?populate[0]=products&populate[1]=user.data[filter][id][$eq]=${userId}`,
-        // `http://localhost:1337/api/users?populate=bookings.id`,
         `http://localhost:1337/api/bookings?populate=products&filters[firstname][$eq]=${user}`,
 
         {
@@ -38,13 +33,14 @@ function Bookings() {
 
   return (
     <>
-      {token ? <div className="flex flex-col items-center">
-        <div className="justify-center">
-          <h1>
-            Hello <strong>{user}</strong>, Here are your requested bookings,
-            waiting for confirmation. You will be noticed on e-mail within
-            2-days if its accepted.
+      {token ? <div className="flex flex-col content-center justify-center">
+        <div className="items-center">
+          <h1 className="mb-4 text-2xl text-center">
+            Hello <strong>{user}</strong>! 
           </h1>
+          <p className="mb-16 text-lg leading-7">Here are your requested bookings,
+            waiting for confirmation. <br/>You will be noticed on e-mail within
+            2-days if its accepted.</p>
           <div>
             {bookings.map((booking) => {
               return (

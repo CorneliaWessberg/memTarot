@@ -12,7 +12,10 @@ import { useCart } from "react-use-cart";
 //Showing menu different on desktop and mobile.
 function Header() {
 
-  const { totalItems } = useCart();
+  const { 
+    totalItems,
+    cartTotal
+  } = useCart();
 
   const [jwt, setJwt] = useState("");
 
@@ -22,13 +25,13 @@ function Header() {
   }, []);
 
   function logoutUser() {
-    localStorage.clear()
+    localStorage.clear();
     window.location.reload()
   }
 
   return (
     <>
-      <div class="header" className="flex flex-col justify-center w-full mt-6 lg:flex-row lg:justify-between ">
+      <div class="header" className="flex flex-col justify-center w-full mt-4 lg:flex-row lg:justify-between ">
         <div className="flex justify-center lg:ml-12 lg:self-start">
           <Link to="/">
             <img
@@ -46,19 +49,19 @@ function Header() {
         <Searchbar />
         </div>
        
-        <div className="flex justify-center mt-6 mr-10 text-center ">
+        <div className="flex flex-col items-center justify-center mt-6 text-center sm:items-start sm:flex-row sm:mr-10 ">
 
       {jwt ?
         (<div className="flex flex-row min-w-max">
             <FaRegUser size={20} />
             <div class="dropdown">
-              <h1 className="ml-2 mr-4 text-base font-medium lg:text-lg hover:underline hover:text-neutral-500">
+              <h1 className="mb-1 ml-2 mr-1 text-xl font-medium sm:text-base sm:mr-4 lg:text-lg hover:underline hover:text-neutral-500">
                 Logout/Account
               </h1>
               <div class="dropdown-content">
-                <Link to="./profilePage">My account</Link>
+                <Link to="./profilePage" className="text-lg">My account</Link>
                 <br />
-                <button onClick={logoutUser} id="logout" className="w-3/4 rounded-md">Logout</button>
+                <button onClick={logoutUser} id="logout" className="w-3/4 mt-1 mb-2 text-lg rounded-sm">Logout</button>
               </div>
             </div>
             </div>) :
@@ -66,7 +69,7 @@ function Header() {
          ( <div className="flex flex-row min-w-max">
             <FaRegUser size={20} />
             <div class="dropdown">
-              <h1 className="ml-2 mr-4 text-base font-medium lg:text-lg hover:underline hover:text-neutral-500 ">
+              <h1 className="mb-1 ml-2 mr-1 text-xl font-medium sm:text-base sm:mr-4 lg:text-lg hover:underline hover:text-neutral-500 ">
                 Login/Account
               </h1>
               <div class="dropdown-content">
@@ -80,18 +83,19 @@ function Header() {
             </div>
           </div>)}
 
-          <div className="flex flex-row mr-4 text-center min-w-max">
+          <div className="flex flex-row mr-1 text-center sm:mr-4 min-w-max">
             <FaCalendarWeek size={20} />
             <Link
               to="/bookings"
-              className="ml-2 text-base lg:text-lg hover:underline hover:text-neutral-500 focus:underline"
+              className="mb-1 ml-2 text-xl sm:text-base lg:text-lg hover:underline hover:text-neutral-500 focus:underline"
             >
               My Bookings
             </Link>
           </div>
+          
           <div className="flex flex-row text-center min-w-max">
             <AiOutlineShoppingCart size={25} />
-            <Link to="/cart" className="ml-2 text-base lg:text-lg hover:underline hover:text-neutral-500 focus:underline">
+            <Link to="/cart" className="mb-1 ml-2 text-xl sm:text-base lg:text-lg hover:underline hover:text-neutral-500 focus:underline">
               Shoppingcart ({ totalItems })
             </Link>
           </div>
