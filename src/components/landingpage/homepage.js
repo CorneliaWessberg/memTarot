@@ -5,27 +5,24 @@ import Carousel from "./carousel";
 import ProductCard from "../user/productCard";
 import { Link } from "react-router-dom";
 
-//landingpage component. Carousel looping feautered products. 
-//cardlist with products with a limit. 
-//cardlist with sessions with a limit. 
+//landingpage component. Carousel looping feautered products.
+//cardlist with products with a limit.
+//cardlist with sessions with a limit.
 //Instagram feed with a widget.
 function Homepage() {
-  
-
   const [products, setProducts] = useState([]);
   const [sessions, setSessions] = useState([]);
 
-  useEffect( () => {
-    const fetchProduct = async()=> {
-        const response = await axios.get(
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const response = await axios.get(
         `http://localhost:1337/api/items?populate=*&pagination[start]=0&pagination[limit]=2`
-        );
-        console.log(response.data);
-        setProducts(response.data.data);
-    }
+      );
+      console.log(response.data);
+      setProducts(response.data.data);
+    };
     fetchProduct();
-}, []);
-
+  }, []);
 
   useEffect(() => {
     const fetchSession = async () => {
@@ -44,7 +41,7 @@ function Homepage() {
     <>
       <div className="w-screen -ml-4">
         <div className="flex flex-col justify-center">
-          {/* <Carousel /> */}
+          <Carousel />
           <div className="flex flex-row flex-wrap justify-around mx-10 mr-2 mt-28">
             {products.map((item) => {
               return (
@@ -80,7 +77,6 @@ function Homepage() {
           <div className="mr-6 text-xl font-bold text-right lg:mr-28 mb-28">
             <Link to="./sessions">See all..</Link>
           </div>
-
 
           {/*instagram feed*/}
           <div
