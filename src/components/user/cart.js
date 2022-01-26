@@ -31,7 +31,7 @@ function Cart() {
           </h1>
           <h2 className="mb-2 text-center">Your cart is empty!</h2>
           <h2 className="flex flex-row justify-center text-center">
-            Lets go shopping - to Shop{" "}
+            Lets go shopping - to Shop
             <Link to="/shop">
               <i>
                 <AiFillShop size={25} className="ml-2" />

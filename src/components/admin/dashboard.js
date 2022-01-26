@@ -60,7 +60,6 @@ function Dashboard() {
                         <p className="p-2 text-base text-gray-700">
                           Requested time: {booking.attributes.time}.00
                         </p>
-                        <div className="px-6 pt-4 pb-2"></div>
                         <div>
                           {booking.attributes.products.data.map((product) => (
                             <>
@@ -70,6 +69,7 @@ function Dashboard() {
                             </>
                           ))}
                         </div>
+                        <button className="block w-full p-2 text-center text-white duration-300 bg-black rounded-sm hover:bg-stone-500">Accept booking</button>
                       </div>
                     </div>
                   </div>

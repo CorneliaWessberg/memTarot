@@ -18,7 +18,7 @@ function Homepage() {
   useEffect( () => {
     const fetchProduct = async()=> {
         const response = await axios.get(
-        `http://localhost:1337/api/items?populate=*`
+        `http://localhost:1337/api/items?populate=*&pagination[start]=0&pagination[limit]=2`
         );
         console.log(response.data);
         setProducts(response.data.data);
@@ -30,11 +30,11 @@ function Homepage() {
   useEffect(() => {
     const fetchSession = async () => {
       const response = await axios.get(
-        `http://localhost:1337/api/products?populate=*&_limit=3`
+        `http://localhost:1337/api/products?populate=*&pagination[start]=0&pagination[limit]=2`
       );
       console.log(response.data);
       setSessions(response.data.data);
-      console.log(JSON.stringify(response.data.data));
+      // console.log(JSON.stringify(response.data.data));
     };
 
     fetchSession();
@@ -42,10 +42,10 @@ function Homepage() {
 
   return (
     <>
-      <div>
+      <div className="w-screen -ml-4">
         <div className="flex flex-col justify-center">
           {/* <Carousel /> */}
-          <div className="flex flex-row flex-wrap justify-around w-screen mt-28">
+          <div className="flex flex-row flex-wrap justify-around mt-28">
             {products.map((item) => {
               return (
                 <ProductCard
@@ -59,10 +59,10 @@ function Homepage() {
               );
             })}
           </div>
-          <div className="mr-6 text-xl font-bold text-right lg:mr-28 mb-28">
+          <div className="mt-6 mr-6 text-xl font-bold text-right lg:mr-28 mb-28">
             <Link to="./shop">See all..</Link>
           </div>
-          <div className="flex flex-row flex-wrap justify-around w-screen mt-28">
+          <div className="flex flex-row flex-wrap justify-around mt-28">
             {sessions.map((product) => {
               return (
                 <SessionCard

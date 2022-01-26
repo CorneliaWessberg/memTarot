@@ -58,8 +58,8 @@ function Register() {
         <h1 className="mt-16 text-xl font-bold text-center">
           Welcome to the Mem-tarot family :)
         </h1>
-        <div className="m-auto my-10 mt-16 bg-white shadow-md lg:w-full">
-          <div className="px-8 py-8 rounded-xl">
+        <div className="w-full m-auto my-10 mt-16 bg-white shadow-md">
+          <div className="px-8 py-8 mx-10 rounded-xl">
             <h1 className="mt-3 text-2xl font-medium text-center">
               Register here
             </h1>
@@ -115,7 +115,7 @@ function Register() {
                 <div className="flex justify-end mt-2 text-xs text-gray-600"></div>
               </div>
 
-              <button className="block w-2/4 p-3 text-center text-white duration-300 rounded-sm md:w-1/4 hover:bg-stone-500 bg-stone-400">
+              <button className="block w-full p-2 text-center text-white duration-300 bg-black rounded-sm md:w-2/4 hover:bg-stone-500">
                 Register
               </button>
 

@@ -18,8 +18,8 @@ function ProfilePage() {
           <h1>Lastname: {lastname} </h1>
           <h1>Email: {email} </h1>
 
-          <h1>Upcoming session: </h1>
-          <h1>My Purchases: </h1>
+          <h1> session: </h1>
+    
         </div>
       </div>
     </>

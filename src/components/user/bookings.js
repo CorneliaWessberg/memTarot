@@ -11,12 +11,17 @@ function Bookings() {
 
   useEffect(() => {
     console.log(userId);
+    console.log(user)
 
     const fetchData = async () => {
       const response = await axios.get(
         // `http://localhost:1337/api/bookings?populate=*`,
         //  `http://localhost:1337/api/bookings?populate[0]=users_permissions_user.id=${userId}&populate[1]=products&populate[2]=products.title*`,
-        `http://localhost:1337/api/bookings?populate=users_permissions_user.id=${userId},products`,
+        //  `http://localhost:1337/api/bookings?populate=user.data.attributes.firstname=${user},products`,
+        //  `http://localhost:1337/api/bookings?populate[0]=products&populate[1]=user.data[filter][id][$eq]=${userId}`,
+        // `http://localhost:1337/api/users?populate=bookings.id`,
+        `http://localhost:1337/api/bookings?populate=products&filters[firstname][$eq]=${user}`,
+
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -24,11 +29,12 @@ function Bookings() {
         }
       );
 
+      console.log(response.data.data)
       setBookings(response.data.data);
     };
 
     fetchData();
-  }, [token, bookings, userId]);
+  }, []);
 
   return (
     <>
@@ -56,8 +62,6 @@ function Bookings() {
                         <p className="p-2 text-base text-gray-700">
                           Your requested time: {booking.attributes.time}.00
                         </p>
-                        <div className="px-6 pt-4 pb-2"></div>
-
                         <div>
                           {booking.attributes.products.data.map((product) => (
                             <>
@@ -65,11 +69,11 @@ function Bookings() {
                                 Booked Session: {product.attributes.Title}
                               </h1>
                               <h1 className="p-2 text-base text-gray-700">
-                                Booked Description:
+                                Description:
                                 {product.attributes.description}
                               </h1>
                               <h1 className="p-2 text-base text-gray-700">
-                                Booked Price: {product.attributes.Price} kr
+                                Price: {product.attributes.Price} kr
                               </h1>
                             </>
                           ))}

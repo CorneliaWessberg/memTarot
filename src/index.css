@@ -13,18 +13,17 @@
 } 
 
 #content {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
-  min-height: 150vh;
+  min-height: 130vh;
   margin-bottom: 10rem;
   /* position: relative; */
 }
- #content-inside {
+
+/* #content-inside {
   max-width: 100%;
- }
-
-
+ }  */
 
 body {
   

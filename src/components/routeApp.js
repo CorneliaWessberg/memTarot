@@ -16,6 +16,7 @@ import Dashboard from "./admin/dashboard";
 import Cart from "./user/cart";
 import Shop from "./user/shop";
 import Checkout from "./user/checkout";
+import SingleProduct from "./user/singleProductPage"; 
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
 export default function RouteApp() {
@@ -42,6 +43,7 @@ export default function RouteApp() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/item/:id" element={<SingleProduct />} />
             </Routes>
           </div>
         </div>

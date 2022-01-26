@@ -10,27 +10,26 @@ function Shop() {
   useEffect(() => {
     const fetchProduct = async () => {
       const response = await axios.get(
-        `http://localhost:1337/api/items?populate=*&_limit=${limitPage}`
+        `http://localhost:1337/api/items?populate=*&pagination[start]=0&pagination[limit]=${limitPage}`
       );
-      console.log(response.data);
+      console.log(response.data.data);
       setProducts(response.data.data);
     };
     fetchProduct();
   }, [limitPage]);
 
   function loadMore() {
-    let dynamic = limitPage + 3;
-    setLimitPage(dynamic);
+    let dynamicMore = limitPage + 3;
+    setLimitPage(dynamicMore);
   }
 
   function loadLess() {
-    let dynamic = limitPage - 3;
-    setLimitPage(dynamic);
+    setLimitPage(6)
   }
 
   return (
     <>
-      <div className="flex flex-row flex-wrap items-center justify-around max-w-screen">
+      <div className="flex flex-row flex-wrap items-center justify-around">
         {products.map((item) => {
           return (
             <div>
@@ -46,7 +45,7 @@ function Shop() {
           );
         })}
       </div>
-      {limitPage >= products.length ? (
+      {limitPage <= products.length ? (
         <button
           class="flex m-2 justify-center text-gray-800 px-4 py-3 bg-gray-300 rounded hover:bg-gray-800 hover:text-white transition duration-200"
           onClick={loadMore}

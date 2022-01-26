@@ -11,7 +11,7 @@ import { useCart } from "react-use-cart";
 //directing to shopping-cart and my bookings.
 //Showing menu different on desktop and mobile.
 function Header() {
-  
+
   const { totalItems } = useCart();
 
   const [jwt, setJwt] = useState("");

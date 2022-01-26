@@ -20,8 +20,9 @@ function SessionList() {
   }, []);
   return (
     <>
-      <h1 className="flex flex-row justify-center mb-10 text-xl font-bold text-center">Make a request on my sessions here <i className="ml-2"><FaMagic size={30}/></i> </h1>
-      <div className="flex flex-row flex-wrap justify-around w-screen">
+      <h1 className="flex flex-row justify-center mb-2 text-2xl font-bold text-center">Tarot sessions<i className="ml-2"><FaMagic size={30}/></i> </h1>
+      <h3 className="flex flex-row justify-center mb-10 text-lg font-semibold text-center">Here you can request a time and date you would like, 2 days to get a confirmation.</h3>
+      <div className="flex flex-row flex-wrap justify-around w-full">
         {sessions.map((product) => {
           return (
             <SessionCard
@@ -32,7 +33,6 @@ function SessionList() {
               time={product.attributes.time}
               price={product.attributes.Price}
               image={product.attributes.img.data.attributes}
-              // products={product.attributes.booking.data}
             />
           );
         })}

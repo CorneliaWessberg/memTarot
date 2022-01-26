@@ -52,8 +52,8 @@ function Login() {
   return (
     <>
       <div class="m-auto my-10 bg-white shadow-md lg:w-full mt-36">
-        <div class="py-8 px-8 rounded-xl">
-          <h1 class="font-medium text-2xl mt-3 text-center">Login</h1>
+        <div class="py-10 px-20 rounded-xl">
+          <h1 class="font-medium text-2xl mt-3 text-center min-w-full">Login</h1>
           <h1>{error}</h1>
           <form class="mt-6" onSubmit={onSubmit} method="POST">
             <div class="my-5 text-sm">
@@ -83,7 +83,7 @@ function Login() {
 
             <button
               type="submit"
-              className="block w-1/4 p-3 text-center text-white duration-300 rounded-md bg-stone-400 hover:bg-stone-500"
+              className="block w-2/4 p-2 text-center text-white duration-300 bg-black rounded-sm hover:bg-stone-500"
             >
               Login
             </button>
@@ -99,7 +99,10 @@ function Login() {
             </Link>
           </p>
         </div>
-      </div>
+  </div>
+  
+ 
+
     </>
   );
 }

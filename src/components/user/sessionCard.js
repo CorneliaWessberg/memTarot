@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import axios from "axios";
@@ -10,7 +10,7 @@ function SessionCard({ id, title, description, time, price, image }) {
   const customStyles = {
     content: {
       background: "white",
-      // top: "10%",
+      top: "15%",
       left: "45%",
       right: "auto",
       bottom: "auto",
@@ -34,6 +34,8 @@ function SessionCard({ id, title, description, time, price, image }) {
   const [error, setError] = useState("");
   const token = localStorage.getItem("jwt");
   const userId = localStorage.getItem("userId");
+  const user = localStorage.getItem("firstname");
+  const lastname = localStorage.getItem("lastname")
 
   function openModal(e) {
     setModalOpen(true);
@@ -57,12 +59,12 @@ function SessionCard({ id, title, description, time, price, image }) {
         `http://localhost:1337/api/bookings`,
         {
           data: {
-            firstname: bookValues.firstname,
-            lastname: bookValues.lastname,
+            firstname: user,
+            lastname: lastname,
             email: bookValues.email,
             date: bookValues.date,
             time: Number(bookValues.time),
-            users_permissions_user: userId,
+            user: userId,
             products: id,
             title: title,
             price: price,
@@ -75,7 +77,7 @@ function SessionCard({ id, title, description, time, price, image }) {
           },
         }
       );
-
+      
       setConfirmation(true);
       console.log(response);
       console.log(JSON.stringify(response, null, 2));
@@ -88,22 +90,22 @@ function SessionCard({ id, title, description, time, price, image }) {
   return (
     <>
       <div
-        className="flex justify-center p-5 my-4 overflow-hidden italic rounded-md shadow-lg w-96 max-h-150"
+        className="flex justify-center p-5 my-4 overflow-hidden rounded-sm shadow-lg w-96 max-h-150"
         id={id}
       >
         <div className="justify-center px-4 py-4 text-center">
           <div className="font-bold text-xl mb-2 p-3.5">{title}</div>
           <img
-            className="object-cover w-full h-40 rounded-2xl"
+            className="object-cover w-full h-40 rounded-md"
             src={`http://localhost:1337${image.formats.small.url}`}
           />
           <p className="p-2 text-base text-gray-700">{description}</p>
           <p className="p-2 text-base text-gray-700">{time}</p>
-          <p className="p-2 text-base text-gray-700">{price}</p>
+          <p className="p-2 text-base text-gray-700">{price} kr</p>
           <div className="px-6 pt-4 pb-2">
             <button
               onClick={openModal}
-              className="block w-full p-3 text-center text-white duration-300 rounded-md bg-stone-400 hover:bg-stone-500"
+              className="flex content-center justify-center w-3/4 p-2 text-center text-white duration-300 rounded-sm bg-stone-400 hover:bg-stone-500"
             >
               Make a request
             </button>
@@ -135,7 +137,7 @@ function SessionCard({ id, title, description, time, price, image }) {
               </h1>
               <form action="" class="mt-6" onSubmit={onSubmit} method="POST">
                 <div class="my-5 text-sm">
-                  <label class="block text-black">firstname:</label>
+                  {/* <label class="block text-black">firstname:</label>
                   <input
                     type="text"
                     id="firstname"
@@ -144,10 +146,10 @@ function SessionCard({ id, title, description, time, price, image }) {
                     value={bookValues.firstname}
                     name="firstname"
                     onChange={onChange}
-                  />
+                  /> */}
                 </div>
                 <div class="my-5 text-sm">
-                  <label class="block text-black">lastname:</label>
+                  {/* <label class="block text-black">lastname:</label>
                   <input
                     type="text"
                     id="lastname"
@@ -156,7 +158,7 @@ function SessionCard({ id, title, description, time, price, image }) {
                     value={bookValues.lastname}
                     name="lastname"
                     onChange={onChange}
-                  />
+                  /> */}
                 </div>
                 <div class="my-5 text-sm">
                   <label class="block text-black">email:</label>

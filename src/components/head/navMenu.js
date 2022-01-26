@@ -77,14 +77,6 @@ function NavigationMenu() {
                 </li>
                 <li className="nav-item">
                   <Link
-                    to="/addSession"
-                    className="mr-8 text-lg hover:underline underline-offset-4 hover:text-neutral-500 focus:underline"
-                  >
-                    Add product
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
                     to="/dashboard"
                     className="text-lg hover:underline underline-offset-4 hover:text-neutral-500 focus:underline"
                   >
