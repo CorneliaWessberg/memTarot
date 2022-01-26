@@ -14,7 +14,7 @@ function SessionCard({ id, title, description, time, price, image }) {
       left: "45%",
       right: "auto",
       bottom: "auto",
-      width: "50%",
+      width: "70%",
       height: "auto",
       transform: "translate(-40%, -10%)",
     },
@@ -90,7 +90,7 @@ function SessionCard({ id, title, description, time, price, image }) {
   return (
     <>
       <div
-        className="flex flex-col justify-center h-auto p-5 mx-10 my-4 mb-16 rounded-sm shadow-lg sm:w-1/2 lg:flex-row lg:w-5/12"
+        className="flex flex-col justify-center h-auto p-5 mx-10 my-4 mb-16 rounded-sm shadow-lg sm:mx-auto sm:w-3/4 lg:flex-row lg:w-5/12"
         id={id}
       >
         <img
@@ -128,8 +128,8 @@ function SessionCard({ id, title, description, time, price, image }) {
             </strong>
           </div>
         ) : (
-          <div class="bg-white lg:w-full md:6/12 w-full m-auto my-10 shadow-md justify-center">
-            <div class="py-8 px-8 rounded-xl">
+          <div class="bg-white w-full lg:w-full md:8/12 shadow-md justify-center">
+            <div class="py-4 px-8 rounded-xl">
               <button onClick={closeModal}>X</button>
               <h1>{error}</h1>
               <h1 class="font-medium text-2xl mt-3 text-center">
@@ -201,12 +201,12 @@ function SessionCard({ id, title, description, time, price, image }) {
                 </div>
 
                 {token ? (
-                  <button class="block text-center text-white bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full">
+                  <button class="mx-auto block text-center text-white bg-black p-3 duration-300 rounded-md hover:bg-stone-500 w-1/2 md:w-full mb-2">
                     Confirm
                   </button>
                 ) : (
                   <h1>
-                    You have to be logged in to make a booking!{" "}
+                    You have to be logged in to make a booking!
                     <Link to="/login">- To login</Link>
                   </h1>
                 )}

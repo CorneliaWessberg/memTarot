@@ -1,7 +1,14 @@
-This project is about MemTarot 
+The purpose of this project is creating a website for Mem-Tarot. 
+Both bookingsystem for Tarot-card readings, and selling products
+in the same theme. Like healing crystals and so on. You can create a user,
+log in with the user. See your personal bookings and buy the products as a member. 
 
+This project is built with React v.17, tailwind v.3 and strapi v.4 with REST-api.
 
-
+Supported browsers: 
+Google Chrome
+Microsoft edge
+Firefox
 
 
 # Getting Started with Create React App

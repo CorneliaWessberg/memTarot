@@ -12,7 +12,7 @@ function Footer() {
           <div className="sm:flex sm:mt-8">
             <div className="flex flex-col justify-between mt-8 sm:mt-0 sm:w-full sm:px-8 sm:flex-row">
               <div className="flex flex-col">
-                <span className="mt-4 mb-2 text-xl font-bold uppercase md:mt-0">
+                <span className="mt-4 mb-2 font-bold uppercase md:mt-0">
                   Contact
                 </span>
                 <span className="my-2">

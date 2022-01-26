@@ -22,7 +22,7 @@ function SessionList() {
     <>
       <h1 className="flex flex-row justify-center mb-4 text-2xl font-bold text-center">Tarot sessions<i className="ml-2"><FaMagic size={30}/></i> </h1>
       <h3 className="flex flex-row justify-center mx-10 mb-10 text-xl font-medium text-center">Here you can request a time and date you would like, 2 days to get a confirmation.</h3>
-      <div className="flex flex-col flex-wrap justify-around w-full md:flex-row">
+      <div className="flex flex-col flex-wrap justify-around w-full lg:flex-row">
         {sessions.map((product) => {
           return (
             <SessionCard

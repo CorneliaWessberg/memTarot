@@ -54,7 +54,7 @@ function Register() {
 
   return (
     <> {sucess ? <h1>Your registration is succesfully done, Welcome! You are now logged in. Lets explore <Link to="/"><i><FaMagic size={30}/></i></Link></h1>
-      : <div>
+      : <div class="register">
         <h1 className="mt-16 text-xl font-bold text-center">
           Welcome to the Mem-tarot family :)
         </h1>
@@ -114,7 +114,7 @@ function Register() {
                 <div className="flex justify-end mt-2 text-xs text-gray-600"></div>
               </div>
 
-              <button className="block w-full p-2 text-center text-white duration-300 bg-black rounded-sm md:w-2/4 hover:bg-stone-500">
+              <button className="block w-full p-2 text-center text-white duration-300 bg-black rounded-md md:w-2/4 hover:bg-stone-500">
                 Register
               </button>
 

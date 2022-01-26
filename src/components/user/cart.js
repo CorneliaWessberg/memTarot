@@ -26,12 +26,11 @@ function Cart() {
     return (
       <>
         <div>
-          <h1 className="mb-4 text-xl font-bold">
+          <h1 className="mb-4 text-3xl font-bold text-center">
             Hello <strong>{user}</strong>! 
           </h1>
-          <h2>welcome to your shoppingcart.</h2>
-          <h2 className="mb-2 text-center">Your cart is empty!</h2>
-          <h2 className="flex flex-row justify-center text-center">
+          <h2 className="mb-2 text-xl text-center">Your cart is empty!</h2>
+          <h2 className="flex flex-row justify-center mb-4 text-xl text-center">
             Lets go shopping - to Shop
             <Link to="/shop">
               <i>
@@ -100,14 +99,15 @@ function Cart() {
           })}
           </div>
       
-      <div>
-        <h1> Total price: {cartTotal} Kr</h1>
+      <div className="flex justify-center -mt-12 text-xl font-semibold">
+        <h1> Total price: {cartTotal};- Kr</h1>
       </div>
-      <div>
-        <button onClick={() => emptyCart()}>Clear cart </button>
+      <div className="flex justify-center">
+        <button className="px-8 py-2 mt-4 mb-2 text-white rounded-md bg-stone-600 hover:bg-stone-800" onClick={() => emptyCart()}>Clear cart </button>
       </div>
       {loggedIn ? (
-        <Link to="/checkout">
+
+        <Link to="/checkout" className="flex justify-center mt-16">
           <button className="flex flex-row items-center justify-center w-1/4 p-3 text-white duration-300 bg-black rounded-md hover:bg-stone-500">
             <i>
               <MdOutlinePayment size={20} className="mt-0.4 mr-1" />
@@ -123,7 +123,14 @@ function Cart() {
           </Link>
         </div>
       )}
-      <Link to="/shop" className="mb-36">Back to shop</Link>
+      <h2 className="flex flex-row justify-center mt-4 text-center">
+            Back to Shop
+            <Link to="/shop">
+              <i>
+                <AiFillShop size={25} className="ml-2" />
+              </i>
+            </Link>
+            </h2>
     </>
   );
 }

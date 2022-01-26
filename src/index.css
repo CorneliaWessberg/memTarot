@@ -25,10 +25,16 @@
   max-width: 100%;
  }  */
 
+
+
+.register {
+  width: 75vw;
+ 
+}
 body {
   
   height: auto;
-  font-family: proxima-nova-sans-serif;
+  font-family: Montserrat, sans-serif;
   color: #57534e;
 }
 
@@ -97,3 +103,8 @@ body {
   opacity: 0.9;
   width: 100%;
 }
+
+@media screen and (min-width:1024px) {
+  .register {
+  width: 50vw; 
+}}
