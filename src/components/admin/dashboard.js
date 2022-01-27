@@ -41,38 +41,38 @@ function Dashboard() {
           return (
             <>
               <div
-                className="flex justify-center w-7/12 p-5 mx-auto my-4 overflow-hidden leading-8 rounded-md shadow-lg max-h-150"
+                className="flex justify-center w-7/12 p-5 mx-auto my-4 mb-16 overflow-hidden leading-8 rounded-md shadow-lg max-h-150"
                 id={booking.id}
               >
                 <div className="justify-center px-4 py-4 text-center">
                   <div className="font-bold text-xl mb-2 p-3.5"></div>
                   <h1 className="text-xl font-bold">Costumers information:</h1>
-                  <p className="p-2 text-base text-gray-700">
+                  <p className="p-2 text-lg text-gray-700">
                     Firstname: {booking.attributes.firstname}
                   </p>
-                  <p className="p-2 text-base text-gray-700">
+                  <p className="p-2 text-lg text-gray-700">
                     Lastname: {booking.attributes.lastname}
                   </p>
-                  <p className="p-2 text-base text-gray-700">
+                  <p className="p-2 text-lg text-gray-700">
                     E-mail: {booking.attributes.email}
                   </p>
-                  <h1 className="text-xl font-bold">Booking details: </h1>
-                  <p className="p-2 text-base text-gray-700">
+                  <h1 className="mt-4 text-xl font-bold">Booking details: </h1>
+                  <p className="p-2 text-lg text-gray-700">
                     Requested date: {booking.attributes.date}
                   </p>
-                  <p className="p-2 text-base text-gray-700">
+                  <p className="p-2 text-lg text-gray-700">
                     Requested time: {booking.attributes.time}.00
                   </p>
                   <div>
                     {booking.attributes.products.data.map((product) => (
                       <>
-                        <h1 className="p-2 text-base text-gray-700">
+                        <h1 className="p-2 text-lg text-gray-700">
                           Wanted Session: {product.attributes.Title}
                         </h1>
                       </>
                     ))}
                   </div>
-                  <button className="block w-full p-2 text-center text-white duration-300 bg-black rounded-sm hover:bg-stone-500">
+                  <button className="block w-full p-2 mt-4 text-center text-white duration-300 bg-black rounded-md hover:bg-stone-500">
                     Accept booking
                   </button>
                 </div>

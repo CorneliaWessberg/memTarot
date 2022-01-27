@@ -13,7 +13,7 @@ function Checkout() {
           <h2 className="text-xl">Total items: ({totalItems})</h2>
           <h2 className="mb-6 text-xl">Order summary: {cartTotal} ;-</h2>
           <button
-            className="px-8 py-1.5 text-center w-36 mb-2 text-white bg-black rounded hover:bg-stone-500"
+            className="px-8 py-1.5 text-center w-42 mb-2 text-white bg-black rounded hover:bg-stone-500"
             onClick={() => emptyCart()}
           >
             Empty Cart

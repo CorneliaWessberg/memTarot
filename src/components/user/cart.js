@@ -108,7 +108,7 @@ function Cart() {
       {loggedIn ? (
 
         <Link to="/checkout" className="flex justify-center mt-16">
-          <button className="flex flex-row items-center justify-center w-1/4 p-3 text-white duration-300 bg-black rounded-md hover:bg-stone-500">
+          <button className="flex flex-row items-center justify-center w-7/12 p-3 text-white duration-300 bg-black rounded-md sm:w-2/4 hover:bg-stone-500">
             <i>
               <MdOutlinePayment size={20} className="mt-0.4 mr-1" />
             </i>
@@ -123,7 +123,7 @@ function Cart() {
           </Link>
         </div>
       )}
-      <h2 className="flex flex-row justify-center mt-4 text-center">
+      <h2 className="flex flex-row justify-center mt-4 text-xl text-center">
             Back to Shop
             <Link to="/shop">
               <i>

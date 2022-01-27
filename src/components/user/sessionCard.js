@@ -14,7 +14,7 @@ function SessionCard({ id, title, description, time, price, image }) {
       left: "45%",
       right: "auto",
       bottom: "auto",
-      width: "70%",
+      width: "65%",
       height: "auto",
       transform: "translate(-40%, -10%)",
     },
@@ -100,8 +100,8 @@ function SessionCard({ id, title, description, time, price, image }) {
 
         <div className="justify-center px-4 py-4 text-center">
           <div className="font-bold text-xl mb-2 p-3.5">{title}</div>
-          <p className="p-2 text-base text-gray-700">{description}</p>
-          <p className="p-2 text-lg text-gray-700">{price};- kr</p>
+          <p className="p-2 text-base ">{description}</p>
+          <p className="p-2 text-lg font-bold ">{price};- kr</p>
           <div className="flex items-center px-6 pt-4 pb-2">
             <button
               onClick={openModal}

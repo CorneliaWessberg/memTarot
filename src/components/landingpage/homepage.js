@@ -39,10 +39,11 @@ function Homepage() {
 
   return (
     <>
-      <div className="w-screen -ml-4">
+      <div className="-ml-4 max-w-screen">
         <div className="flex flex-col justify-center">
-          <Carousel />
-          <div className="flex flex-row flex-wrap justify-around mx-10 mr-2 mt-28">
+          {/* <Carousel /> */}
+          <h1 className="text-3xl font-semibold text-center underline underline-offset-4">products</h1>
+          <div className="flex flex-row flex-wrap justify-around mx-10 mt-16 mr-2">
             {products.map((item) => {
               return (
                 <ProductCard
@@ -56,10 +57,11 @@ function Homepage() {
               );
             })}
           </div>
-          <div className="mr-6 -mt-2 text-xl font-bold text-right lg:mr-28 mb-28">
+          <div className="mr-6 -mt-6 text-xl font-bold text-right lg:mr-28 mb-28">
             <Link to="./shop">See all..</Link>
           </div>
-          <div className="flex flex-row flex-wrap justify-around mt-10 ml-2">
+          <h1 className="text-3xl font-semibold text-center underline underline-offset-4">Tarot sessions</h1>
+          <div className="flex flex-row flex-wrap justify-around mt-16 ml-2">
             {sessions.map((product) => {
               return (
                 <SessionCard
@@ -74,7 +76,7 @@ function Homepage() {
               );
             })}
           </div>
-          <div className="mr-6 text-xl font-bold text-right lg:mr-28 mb-28">
+          <div className="mr-6 -mt-4 text-xl font-bold text-right lg:mr-28 mb-28">
             <Link to="./sessions">See all..</Link>
           </div>
 

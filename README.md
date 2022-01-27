@@ -10,6 +10,7 @@ Google Chrome
 Microsoft edge
 Firefox
 
+Supported devices: 320px up to 1536px 
 
 # Getting Started with Create React App
 

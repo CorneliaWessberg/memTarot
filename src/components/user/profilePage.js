@@ -55,14 +55,13 @@ function ProfilePage() {
           </h1>
           <div className="flex flex-col content-center justify-center mx-auto">
             <div className="items-center">
-             
               <div>
                 {bookings.map((booking) => {
                   return (
                     <>
                       <div>
                         <div
-                          className="flex justify-center w-9/12 p-5 mx-auto my-4 overflow-hidden leading-8 rounded-md shadow-lg max-h-150"
+                          className="flex justify-center w-9/12 p-5 mx-auto my-4 mb-10 overflow-hidden leading-8 rounded-md shadow-lg max-h-150"
                           id={booking.id}
                         >
                           <div className="justify-center px-4 py-4 text-start">
