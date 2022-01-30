@@ -2,21 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .app {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   flex-direction: column;
   min-height: 100%;
-  max-width: 1536px; 
-  
-} 
+  /* max-width: 1536px;  Now works on all devices! :)*/
+}
 
 #content {
-  width: 100%; 
+  width: 100%;
   display: flex;
   justify-content: center;
-  min-height: 90vh; 
+  min-height: 90vh;
   margin-bottom: 10rem;
   /* position: relative; */
 }
@@ -25,14 +23,10 @@
   max-width: 100%;
  }  */
 
-
-
 .register {
   width: 75vw;
- 
 }
 body {
-  
   height: auto;
   font-family: Montserrat, sans-serif;
   color: #57534e;
@@ -43,8 +37,7 @@ body {
 }
 
 #navBar {
-  background-color: #a8a29e;;
-
+  background-color: #a8a29e;
 }
 
 .dropdown {
@@ -53,30 +46,32 @@ body {
 }
 
 .dropdown-content {
- 
-    display: none;
-    position: absolute;
-    background-color: white;
-    border: solid 0.8px #a8a29e; 
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    color: black;
-    text-align: center;
-    padding: 1rem;
-    line-height: 2rem;
-  
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: solid 0.8px #a8a29e;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: black;
+  text-align: center;
+  padding: 1rem;
+  line-height: 2rem;
 }
 
-.dropdown-content a:hover {border-bottom: solid 1px black;}
+.dropdown-content a:hover {
+  border-bottom: solid 1px black;
+}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 #login {
   background-color: #a8a29e;
   padding: 0.6rem;
-  color: white; 
+  color: white;
 }
 
 #login:hover {
@@ -87,9 +82,8 @@ body {
 #logout {
   background-color: #a8a29e;
   padding: 0.2rem;
-  color: white; 
+  color: white;
 }
-
 
 #logout:hover {
   border-bottom: none;
@@ -99,12 +93,13 @@ body {
 .footer {
   position: relative;
   background-color: #a8a29e;
-  bottom: 0; 
+  bottom: 0;
   opacity: 0.9;
   width: 100%;
 }
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width: 1024px) {
   .register {
-  width: 50vw; 
-}}
+    width: 50vw;
+  }
+}
